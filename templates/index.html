@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf5ff">
+  <meta name="description" content="Research-only diabetes classification and food suitability demonstration, powered by three local machine learning artifacts.">
+  <title>DiaWise | Diabetes Research Studio</title>
+  <link rel="icon" href="/static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/http.js" defer></script>
+  <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+  <div class="page-halo halo-one" aria-hidden="true"></div><div class="page-halo halo-two" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="DiaWise home">
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M6 24h7l4-9 6 17 5-11h10" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="brand-names"><strong>DiaWise</strong><span>DIABETES RESEARCH LAB</span></span>
+      </a>
+      <div class="header-right">
+        <span class="local-bubble"><span class="status-dot"></span> Local AI • No Cloud</span>
+        <a href="/api/docs" target="_blank" rel="noopener" class="doc-link" title="Open FastAPI documentation">API Docs <span>↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <div class="eyebrow"><span class="eyebrow-line"></span> EXPLAINABLE MACHINE LEARNING <span class="tiny-sparkle">✦</span></div>
+          <h1>Health insights,<br><em>made understandable.</em></h1>
+          <p>Three research models, one intuitive interface. Explore diabetes classification, laboratory-free analysis, and nutritional food suitability—all processed locally on your computer.</p>
+          <div class="hero-pills"><span>✧ 3 trained ML artifacts</span><span>✓ FastAPI + Uvicorn</span><span>◌ 100% local processing</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
+          <div class="hero-medallion"><div class="medallion-inner"><svg viewBox="0 0 120 120" fill="none"><path d="M16 61h23l13-29 20 58 13-29h19" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          <div class="floating-card floating-a"><span class="floating-icon">✳</span><span>Model ready<strong>03 / 03</strong></span></div>
+          <div class="floating-card floating-b"><span class="floating-icon blue">◈</span><span>Research first<strong>Explainable AI</strong></span></div>
+        </div>
+      </section>
+
+      <nav class="main-tabs" aria-label="Main pages" role="tablist">
+        <button class="main-tab is-active" id="tab-predict" role="tab" aria-selected="true" aria-controls="view-predict" data-page="predict"><span class="tab-glyph">✧</span> Prediction Studio <span class="tab-desc">Try the models</span></button>
+        <button class="main-tab" id="tab-learn" role="tab" aria-selected="false" aria-controls="view-learn" data-page="learn"><span class="tab-glyph">▤</span> About the Models <span class="tab-desc">Research & methodology</span></button>
+      </nav>
+
+      <section id="view-predict" class="page-view" role="tabpanel" aria-labelledby="tab-predict">
+        <div class="view-head"><div><span class="section-kicker">INTERACTIVE LAB</span><h2>Choose a model to explore</h2><p>Enter the required information to view a research-based classification. Your inputs are never stored.</p></div><span class="small-tag">Step 01 / Choose model</span></div>
+        <div class="model-switcher" role="tablist" aria-label="Choose model">
+          <button class="model-option selected" role="tab" aria-selected="true" data-model="pima"><span class="option-icon icon-blue">⌁</span><span class="option-content"><small>MODEL 01</small><strong>PIMA Diabetes</strong><em>8 clinical inputs</em></span><span class="option-arrow">↗</span></button>
+          <button class="model-option" role="tab" aria-selected="false" data-model="general"><span class="option-icon icon-purple">◉</span><span class="option-content"><small>MODEL 02</small><strong>General Diabetes</strong><em>Full & non-lab modes</em></span><span class="option-arrow">↗</span></button>
+          <button class="model-option" role="tab" aria-selected="false" data-model="food"><span class="option-icon icon-teal">♧</span><span class="option-content"><small>MODEL 03</small><strong>Food Suitability</strong><em>Lookup & nutrition analysis</em></span><span class="option-arrow">↗</span></button>
+        </div>
+        <div class="lab-layout">
+          <section class="form-panel card-surface" aria-labelledby="form-title">
+            <div class="panel-top"><div><div id="form-kicker" class="section-kicker">MODEL 01 · PIMA</div><h3 id="form-title">PIMA Diabetes Classification</h3><p id="form-subtitle">Enter the eight values below. Units are shown for each field.</p></div><span class="panel-ornament">◎</span></div>
+            <div id="mode-toggle" class="mode-toggle" hidden></div>
+            <form id="prediction-form" autocomplete="off" novalidate><div id="form-fields" class="form-grid"></div>
+              <div id="form-help" class="form-help">For research demonstration only; this is not a medical diagnosis.</div>
+              <div id="form-errors" class="form-error" role="alert" aria-live="polite" hidden></div>
+              <div class="form-actions"><button type="submit" class="primary-button" id="submit-button"><span class="primary-star">✦</span> <span id="submit-label">Show prediction</span><span class="arrow-icon">↗</span></button><button type="button" class="ghost-button" id="demo-button">Example input</button><button type="button" class="ghost-button ghost-reset" id="reset-button">Reset</button></div>
+            </form>
+          </section>
+          <aside class="result-column">
+            <section id="result-placeholder" class="result-placeholder card-surface"><div class="result-placeholder-art"><span>✧</span></div><span class="section-kicker">MODEL OUTPUT</span><h3>Your insights<br>appear here</h3><p>Complete the form and click “Show prediction” to see the result here.</p><div class="placeholder-lines"><i></i><i></i><i></i></div></section>
+            <section id="result-panel" class="result-panel card-surface" hidden aria-live="polite"><span class="section-kicker">PREDICTION RESULT</span><div id="result-icon" class="result-icon">◉</div><h3 id="result-title"></h3><p id="result-detail"></p><div id="probability-wrap" class="probability-wrap"><div class="probability-heading"><span id="probability-label">Predicted class probability</span><strong id="result-probability">—</strong></div><div class="probability-track"><div id="probability-fill"></div></div><small id="probability-note"></small></div><div id="result-extras" class="result-extras"></div><div class="result-disclaimer" id="result-disclaimer"></div><button type="button" class="another-button" id="result-again">Make another prediction ↗</button></section>
+            <section class="info-card"><div class="info-card-icon">ⓘ</div><div><strong>Academic research prototype</strong><p>This tool is not a substitute for diagnosis, treatment, or personalized dietary planning. Discuss test results or symptoms with a qualified healthcare professional.</p></div></section>
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-learn" class="page-view" role="tabpanel" aria-labelledby="tab-learn" hidden>
+        <div class="view-head"><div><span class="section-kicker">RESEARCH JOURNEY</span><h2>Behind the intelligence</h2><p>See how each model was developed, trained, and evaluated according to the thesis workflow.</p></div><span class="small-tag">3 models · 4 research questions</span></div>
+        <div class="research-summary"><div class="research-lead"><span class="section-kicker">THE THESIS</span><h3>Personalized lifestyle recommendation system for diabetics’ prevention using explainable machine learning</h3><p>Three distinct experimental pipelines: a PIMA benchmark, laboratory-feature ablation, and author-curated food suitability.</p></div><div class="research-stats"><div><strong>768</strong><span>PIMA records</span></div><div><strong>96,146</strong><span>General records (cleaned)</span></div><div><strong>718</strong><span>Food records</span></div></div></div>
+        <div class="diagram-spotlight card-surface"><div><span class="section-kicker">END-TO-END FLOW</span><h3>Overall research architecture</h3><p>Three datasets, preprocessing, algorithm selection, evaluation, interpretability, and food-related output.</p></div><img src="/static/images/research_overview.png" alt="Overall research architecture diagram connecting all three models" loading="lazy"></div>
+        <div class="about-model-grid">
+          <article class="about-model card-surface"><div class="about-head"><span class="option-icon icon-blue">⌁</span><span>MODEL 01</span></div><h3>PIMA Diabetes Classification</h3><p>Fourteen engineered features are derived from the eight original inputs, creating 22 predictors used to compare nine algorithms. Final model: tuned Random Forest, threshold 0.48, with SHAP explanation.</p><div class="key-facts"><span><b>Source</b> Kaggle</span><span><b>Hold-out accuracy</b> 87.01%</span><span><b>Diabetic recall</b> 85.19%</span></div></article>
+          <article class="about-model card-surface"><div class="about-head"><span class="option-icon icon-purple">◉</span><span>MODEL 02</span></div><h3>General Diabetes Experiments</h3><p>LightGBM was selected after comparing SMOTENC, under-sampling, and class weighting. Performance and SHAP results are compared for eight features versus six features without HbA1c and blood glucose.</p><div class="key-facts"><span><b>Source</b> Kaggle</span><span><b>Full test accuracy</b> <span id="metric-full">96.93%</span></span><span><b>Non-lab accuracy</b> <span id="metric-nonlab">78.49%</span></span></div></article>
+          <article class="about-model card-surface"><div class="about-head"><span class="option-icon icon-teal">♧</span><span>MODEL 03</span></div><h3>Nutrition & Food Suitability</h3><p>A calibrated XGBoost model was trained on five nutrition features from 718 primarily author-created and curated foods. Known foods use direct catalog lookup; unknown foods are normalized to a 100 g basis before prediction.</p><div class="key-facts"><span><b>Source</b> Primarily author-created</span><span><b>Hold-out accuracy</b> 91.67%</span><span><b>Labels</b> Curated suitability</span></div></article>
+        </div>
+        <div class="charts-heading"><span class="section-kicker">VISUAL METHODOLOGY</span><h3>Detailed model workflows</h3></div>
+        <div class="diagram-grid"><figure class="diagram-card card-surface"><img src="/static/images/controlled_experiment.png" alt="Full versus non-laboratory controlled experiment design" loading="lazy"><figcaption><strong>Full vs non-lab experiment</strong><span>Model 2 feature-ablation experiment.</span></figcaption></figure><figure class="diagram-card card-surface"><img src="/static/images/leakage_control.png" alt="Train-only resampling and leakage-control diagram" loading="lazy"><figcaption><strong>Data-leakage prevention</strong><span>Resampling is applied only within training data.</span></figcaption></figure><figure class="diagram-card card-surface"><img src="/static/images/food_two_paths.png" alt="Known food versus unknown food prediction workflows" loading="lazy"><figcaption><strong>Two-path food engine</strong><span>Catalog lookup vs XGBoost classification.</span></figcaption></figure><figure class="diagram-card card-surface"><img src="/static/images/performance_drop.png" alt="Model 2 performance changes across full and non-lab features" loading="lazy"><figcaption><strong>Feature-removal performance</strong><span>Accuracy, precision, recall and F1 comparison.</span></figcaption></figure></div>
+        <section class="research-questions card-surface"><div><span class="section-kicker">RESEARCH GAPS</span><h3>Four questions answered by Model 2</h3><p>These questions directly guide the laboratory-feature experimental design.</p></div><ol><li>How effective is classification without HbA1c and blood glucose?</li><li>How much do accuracy and diabetic recall decrease when laboratory features are removed?</li><li>What is the potential for non-laboratory screening with fewer features?</li><li>How do SHAP feature importance and the recall/precision trade-off change?</li></ol></section>
+        <section class="caveats"><strong>Research limitations to keep in mind</strong><p>Dataset metrics are retrospective results, not clinical validation. PIMA data has population constraints; the 6-feature model has substantial false-positive burden; and the primarily author-curated food workbook contains an audit of 104 estimated nutrient values. Food categories do not adapt to individual medications, allergies, or daily carbohydrate targets.</p></section>
+      </section>
+    </main>
+    <footer class="site-footer"><div><strong>DiaWise</strong> <span>• Built from 3 original research notebooks</span></div><div>FastAPI · Uvicorn · scikit-learn · LightGBM · XGBoost <span>· Runs locally</span></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,719 @@
+﻿ID,Food Name,Category,Serving Size (g),Carbohydrate (g),Sugar (g),Fiber (g),Fat (g),Glycemic Index,Score
+1,Acorn Squash,Vegetables,100,15,3,4.5,0.1,55,1
+2,Agave Syrup,Sweetener,100,76,68,0.2,0.5,15,0
+3,Alfalfa Sprouts,Vegetables,100,2.1,0.2,1.9,0.7,15,1
+4,Almond Butter,Nuts & Seeds,100,18.81,4.38,10.31,55.5,15,1
+5,Almond Milk (Unsweetened),Plant-Based Milk & Beverages,100,0.3,0,0.2,1.1,30,1
+6,Almonds,Nuts & Seeds,100,21.67,4.33,11.67,50,15,1
+7,Aloo Chop,Snacks,100,25,1.5,2.5,16,68,0
+8,Aloo Gobi,Mixed Dishes,100,12,2,3,6,55,1
+9,Aloo Paratha,Bread & Bakery Products,100,40,1.5,3,10,65,0
+10,Alu Bhorta (Mashed Potato),Mixed Dishes,100,18,1,2,4,70,0
+11,Amaranth,Cereals & Grains,100,65.3,1.7,6.7,7,55,1
+12,Amaranth Grain,Cereals & Grains,100,18.7,1.7,2.1,1.6,35,1
+13,Amaranth Stem (Data Shak),Vegetables,100,4,0.5,2,0.3,15,1
+14,Animal Crackers,Bread & Bakery Products,100,70.1,41.1,0.9,24.1,67,0
+15,Apple,Fruits,100,13.8,10.4,2.4,0.2,36,1
+16,Apple Juice (Unsweetened),Beverage,100,11.4,9.6,0.2,0.1,40,0
+17,Apple Pie,Sweets & Desserts,100,35,18,2,12,59,0
+18,Applesauce (Unsweetened),Fruits,100,11.4,9.4,1.4,0.1,35,1
+19,Apricot,Fruits,100,11.1,9.2,2,0.4,34,1
+20,Arrowroot Flour,Cereals & Grains,100,88.2,0.95,3.4,0.1,57,1
+21,Artichoke,Vegetables,100,10.5,1,5.7,0.2,20,1
+22,Arugula,Vegetables,100,3.7,2.1,1.6,0.7,15,1
+23,Ash Gourd (Chal Kumra),Vegetables,100,3,1.8,2.9,0.2,15,1
+24,Asparagus,Vegetables,100,4.1,1.3,2,0.22,15,1
+25,Avocado,Fruits,100,8,0.6,6.6,14.6,15,1
+26,Avocado Toast (Whole Grain),Mixed Dishes,100,20,2,5,12,50,1
+27,Baby Corn,Vegetables,100,3,1.7,1.8,0.2,15,1
+28,Bacon (Fried),Meat,100,1.4,0,0,42,0,0
+29,Baguette,Bread & Bakery Products,100,55.7,2.7,2.4,1.2,95,0
+30,Baked Beans (Canned),Legumes & Pulses,100,20,8,5,0.4,40,1
+31,Bamboo Shoots,Vegetables,100,5.2,3,2.2,0.3,15,1
+32,Banana,Fruits,100,22.8,12.2,2.6,0.3,51,1
+33,Banana Chips (Fried),Snacks,100,58.4,35,7.7,33.6,55,0
+34,Banana Flower (Mocha),Vegetables,100,9.9,1.5,5.7,0.6,15,1
+35,Banana Stem (Thor),Vegetables,100,5,1,2.5,0.1,15,1
+36,Barbecue Sauce,Condiments & Sauces,100,33,28,0.5,0.6,60,1
+37,Barley,Cereals & Grains,100,28.2,0.3,3.8,0.4,28,1
+38,Barley Flour,Cereals & Grains,100,74.5,0.8,10.1,1.6,52,1
+39,Barley Malt Flour,Cereals & Grains,100,78.3,0.8,7.1,1.8,52,1
+40,Basil Pesto,Condiments & Sauces,100,6,1.47,2,47,15,1
+41,Basmati Rice,Cereals & Grains,100,25.2,0.1,0.4,0.4,58,1
+42,Beef Burger Patty (Grilled),Meat,100,0,0,0,20,0,0
+43,Beef Curry (Bangladeshi),Mixed Dishes,100,4,1.5,1,14,15,1
+44,Beef Liver,Meat,100,3.9,0,0,5.3,0,1
+45,Beef Roll (Paratha Wrap),Mixed Dishes,100,30,2,2.5,14,62,0
+46,Beef Sirloin (Grilled),Meat,100,0,0,0,8.5,0,1
+47,Beef Stew,Mixed Dishes,100,9,3,2,8,40,1
+48,Beef Tehari,Mixed Dishes,100,30,1.5,1,11,65,0
+49,Beer,Beverage,100,3.6,0,0,0,66,0
+50,Beet Greens,Vegetables,100,4.3,0.5,3.7,0.1,15,1
+51,Beetroot,Vegetables,100,9.6,6.8,2.8,0.2,62,1
+52,Begun Bhorta (Eggplant Mash),Mixed Dishes,100,6,3,3,4.5,15,1
+53,Beguni,Snacks,100,20,2,3,18,65,0
+54,Besan Cheela With Veggies,Mixed Dishes,100,20,2.5,4.5,5,35,1
+55,Besan Chilla,Bread & Bakery Products,100,22,2,5,5,35,1
+56,Besan Laddu,Sweets & Desserts,100,50,30,3,25,60,0
+57,Bhapa Pitha,Sweets & Desserts,100,38,15,1.5,6,70,0
+58,Bhatura,Bread & Bakery Products,100,45,2,2,17,75,0
+59,Bhetki Fish,Fish & Seafood,100,0,0,0,2,0,1
+60,Bhindi Masala,Mixed Dishes,100,7,2,3.5,6,20,1
+61,Bitter Gourd,Vegetables,100,3.7,1,2,0.15,15,1
+62,Black Beans,Legumes & Pulses,100,23.7,0.3,8.7,0.5,30,1
+63,Black Chickpeas,Legumes & Pulses,100,27.4,1,7.6,2.6,28,1
+64,Black Coffee,Beverage,100,0,0,0,0,0,1
+65,Black Olives,Vegetables,100,6,0,3.2,10.7,15,1
+66,Black Pepper,Herbs & Spices,100,64,0.5,25.5,3.5,15,1
+67,Black Rice,Cereals & Grains,100,21,0.2,1.5,0.9,42,1
+68,Black Tea (Unsweetened),Beverage,100,0.3,0,0,0,0,1
+69,Black-Eyed Peas,Legumes & Pulses,100,20.8,3.3,6.5,0.5,33,1
+70,Blackberries,Fruits,100,9.6,4.9,5.3,0.5,25,1
+71,Blood Orange,Fruits,100,11.7,9,2.4,0.1,40,1
+72,Blueberries,Fruits,100,14.5,10,2.4,0.33,53,1
+73,Blueberry Muffin,Sweets & Desserts,100,50,28,1.5,15,59,0
+74,Boiled Chicken Breast,Protein,100,0,0,0,4.3,0,1
+75,Boiled Chickpea Salad,Mixed Dishes,100,18,3,5.5,4,35,1
+76,Boiled Egg,Eggs & Egg Products,100,1.12,1,0,10.6,0,1
+77,Boiled Potato,Vegetable/Starch,100,20.1,0.9,1.8,0.1,78,0
+78,Bok Choy,Vegetables,100,2.2,1.2,1,0.2,15,1
+79,Borhani (Spiced Buttermilk),Beverage,100,4,3.5,0,1.5,30,1
+80,Boston Cream Pie,Bread & Bakery Products,100,42.9,36.1,1.4,8.5,65,0
+81,Bottle Gourd,Vegetables,100,2.5,0.5,0.6,0.1,15,1
+82,Bran Flakes,Cereals & Grains,100,69,17,13,2.5,74,0
+83,Brazil Nuts,Nuts & Seeds,100,12.3,2.3,7.5,66.4,10,1
+84,"Broad Beans (Fava, Cooked)",Legumes & Pulses,100,19.7,2,5.4,0.6,40,1
+85,Broccoli,Vegetables,100,6.6,1.7,2.6,0.4,10,1
+86,Broccoli Rabe,Vegetables,100,2.9,0.4,2.7,0.5,15,1
+87,Broccolini,Vegetables,100,7,1.7,3,0.4,15,1
+88,Brown Bread (Whole Wheat),Bread & Bakery Products,100,42.67,4.33,6,3.67,51,1
+89,Brown Rice,Cereals & Grains,100,25.6,0.4,1.6,1,50,1
+90,Brown Rice Bowl With Chicken,Mixed Dishes,100,30,2,3,6,50,1
+91,Brown Sugar,Sweetener,100,98,97,0,0,64,0
+92,Brownie,Sweets & Desserts,100,57,42,3,20,61,0
+93,Brownies,Bread & Bakery Products,100,63.9,36.6,2.1,16.3,61,0
+94,Brussels Sprouts,Vegetables,100,9,2.2,3.8,0.3,15,1
+95,Buckwheat,Cereals & Grains,100,19.9,0.9,2.7,0.6,51,1
+96,Buckwheat Flour,Cereals & Grains,100,70.6,2.6,10,3.1,55,1
+97,Bulgur (Cooked),Cereals & Grains,100,18.6,0.1,4.5,0.2,47,1
+98,Burdock Root,Vegetables,100,17.3,2.9,3.3,0.2,30,1
+99,Burger Bun,Bread & Bakery Products,100,49,5,2.5,4.5,61,0
+100,Butter,Oils & Fats,100,0,0,0,80,0,1
+101,Butter Cookies,Bread & Bakery Products,100,68.9,27.95,0.8,18.8,67,0
+102,Buttermilk (Plain),Dairy,100,4.8,4.8,0,0.9,30,1
+103,Butternut Squash,Vegetables,100,11.7,2.2,2,0.1,51,1
+104,Cabbage,Vegetables,100,5.8,3.2,2.5,0.1,10,1
+105,Cabbage Stir-Fry (Bandhakopi Bhaji),Mixed Dishes,100,6,3,2.5,5,20,1
+106,Candy,Snacks,100,93.33,80,0.67,3.33,70,0
+107,Canned Peaches In Syrup,Fruits,100,17,15,1,0.1,52,0
+108,Canned Pineapple In Syrup,Fruits,100,20,18,0.8,0.1,65,0
+109,Canola Oil,Oils & Fats,100,0,0,0,100,0,1
+110,Cantaloupe,Fruits,100,8.2,7.9,0.9,0.2,65,1
+111,Capsicum,Vegetables,100,4.6,2.2,1.7,0.2,32,1
+112,Cardamom,Herbs & Spices,100,68.5,0,28,6.5,15,1
+113,Carrot,Vegetables,100,9.6,4.7,2.8,0.2,30,1
+114,Carrot Juice,Beverage,100,9.3,4.5,0.8,0.2,43,0
+115,Cashew Butter,Nuts & Seeds,100,27.62,5.88,2,49.38,27,1
+116,Cashew Milk (Unsweetened),Plant-Based Milk & Beverages,100,0.5,0,0.2,1.2,30,1
+117,Cashew Nuts,Nuts & Seeds,100,30.33,5.67,3.33,39,22,1
+118,Cassava,Vegetables,100,38.1,1.7,1.8,0.3,70,1
+119,Catfish (Baked),Fish & Seafood,100,0,0,0,7,0,1
+120,Cauliflower,Vegetables,100,5,1.9,2,0.3,10,1
+121,Cauliflower Curry,Mixed Dishes,100,7,2.5,2.5,6,25,1
+122,Celeriac,Vegetables,100,9.2,1.6,1.8,0.3,15,1
+123,Celery,Vegetables,100,3,1.3,1.6,0.2,33,1
+124,Chana Dal,Legumes & Pulses,100,22,2,7,1.5,8,1
+125,Chana Masala,Legumes & Pulses,100,20,3,6,6,35,1
+126,Chanachur,Snacks,100,50,3,7,30,42,0
+127,Chayote,Vegetables,100,4.5,1.7,1.7,0.1,15,1
+128,Cheddar Cheese,Dairy,100,1.3,0.5,0,33.1,0,1
+129,Cheese Puffs,Snacks,100,57,3,1.5,33,75,0
+130,Cheese Sandwich,Mixed Dishes,100,28,3,2,15,55,1
+131,Cheeseburger,Mixed Dishes,100,28,5,1.5,13,66,0
+132,Cheesecake,Sweets & Desserts,100,25,18,0.5,25,39,0
+133,Cherries,Fruits,100,16,12.8,2.1,0.2,22,1
+134,Cherry Tomato,Vegetables,100,3.9,2.6,1.2,0.2,15,1
+135,Chia Seeds,Nuts & Seeds,100,42,0,33.33,30.67,15,1
+136,Chicken Biryani,Mixed Dishes,100,30,1.5,1,9,65,0
+137,Chicken Burger,Mixed Dishes,100,25,4,1.5,11,66,0
+138,Chicken Caesar Salad,Mixed Dishes,100,6,2,2,10,15,1
+139,Chicken Chow Mein,Mixed Dishes,100,20,2.5,1.5,6,55,1
+140,Chicken Corn Soup,Mixed Dishes,100,10,3,1,2,50,1
+141,Chicken Curry (Bangladeshi),Mixed Dishes,100,4,1.5,0.8,10,15,1
+142,"Chicken Drumstick (Skinless, Baked)",Protein,100,0,0,0,5.7,0,1
+143,Chicken Egg Curry,Eggs & Egg Products,100,4.5,1.2,0.8,6.5,35,1
+144,Chicken Fried Rice,Mixed Dishes,100,27,1.5,1,8,72,0
+145,Chicken Momos,Mixed Dishes,100,22,1,1.5,6,58,1
+146,Chicken Nuggets,Protein,100,17,0.5,0.8,18,46,0
+147,Chicken Shawarma,Mixed Dishes,100,20,3,2,9,55,0
+148,Chicken Soup,Mixed Dishes,100,3,1,0.5,2.5,25,1
+149,Chicken Stew,Mixed Dishes,100,8,3,2,6,35,1
+150,"Chicken Thigh (Skinless, Grilled)",Protein,100,0,0,0,8.2,0,1
+151,Chicken Tikka,Protein,100,3,1,0.5,7,15,1
+152,Chicken Wrap,Mixed Dishes,100,22,3,2.5,9,52,1
+153,Chickpea Curry With Coconut,Mixed Dishes,100,18,3,5,8,35,1
+154,Chickpea Flour,Legumes & Pulses,100,57.8,10.87,10.8,6.7,35,1
+155,Chickpeas,Legumes & Pulses,100,27.4,4.8,7.6,2.6,28,1
+156,Chili Sauce,Condiments & Sauces,100,18,12,1,0.47,50,1
+157,Chili With Beans,Legumes & Pulses,100,13.2,1.7,3.3,3.8,35,1
+158,Chinese Broccoli,Vegetables,100,4.7,0.9,2.6,0.8,15,1
+159,Chitoi Pitha,Sweets & Desserts,100,35,3,1,2,78,0
+160,Chocolate Cake,Sweets & Desserts,100,51,34,2,15,38,0
+161,Chocolate Chip Cookie,Sweets & Desserts,100,63,35,2.5,23,62,0
+162,Chocolate Chip Cookies,Bread & Bakery Products,100,65.8,37.1,1.8,19.8,65,0
+163,Chocolate Hazelnut Spread,Sweetener,100,57,56,3.4,31,55,0
+164,Chocolate Ice Cream,Sweets & Desserts,100,24,22,1.5,11,37,0
+165,Chocolate Milk,Beverage,100,10.5,9.5,0.7,2,37,0
+166,Chocolate Milkshake,Beverage,100,16,15,0.3,3.3,40,0
+167,Chocolate Sandwich Cookies,Bread & Bakery Products,100,68.2,46,2.7,24.5,65,0
+168,Chocolate Wafers,Bread & Bakery Products,100,72.7,37.4,3.4,14.2,65,0
+169,Chomchom,Sweets & Desserts,100,45,40,0,3,70,0
+170,Chotpoti,Snacks,100,25,4,5,5,45,1
+171,Cinnamon (Ground),Herbs & Spices,100,80.67,2.33,53,1.33,15,1
+172,Cinnamon Roll,Bread & Bakery Products,100,48.6,25.7,1.2,26.6,67,0
+173,Clementine,Fruits,100,12,9.2,1.7,0.2,35,1
+174,Club Sandwich,Mixed Dishes,100,22,3,2,10,60,0
+175,Cluster Beans (Gawar),Vegetables,100,10.8,1.5,4.5,0.4,15,1
+176,Coconut Chutney,Condiments & Sauces,100,10,3,5,18,35,1
+177,Coconut Milk (Canned),Plant-Based Milk & Beverages,100,5.5,3.3,2.2,23.8,40,1
+178,Coconut Oil,Oils & Fats,100,0,0,0,100,0,1
+179,Coconut Water (Fresh),Beverage,100,3.7,2.6,1.1,0.2,3,1
+180,Cod (Baked),Fish & Seafood,100,0,0,0,0.9,0,1
+181,Coffee,Beverage,100,0,0,0,0,0,1
+182,Coffee Cake,Bread & Bakery Products,100,46.7,26.33,2,23.3,67,0
+183,Collard Greens,Vegetables,100,5.4,0.5,4,0.7,15,1
+184,Coriander Chutney,Condiments & Sauces,100,8,2,3,5,15,1
+185,Coriander Leaves,Herbs & Spices,100,3.65,0.85,2.8,0.5,15,1
+186,Coriander Seeds,Herbs & Spices,100,55,0,42,17.67,15,1
+187,Corn (Boiled),Cereals & Grains,100,21,4.5,2.4,1.5,52,1
+188,Corn Bran,Cereals & Grains,100,85.6,0,79,0.9,66,1
+189,Corn Flour,Cereals & Grains,100,76.6,1.6,6.4,3.7,55,1
+190,Corn Tortilla,Bread & Bakery Products,100,46.6,0.9,6.3,2.9,52,1
+191,Cornflakes,Cereals & Grains,100,84,8,3,0.4,81,0
+192,Cornmeal,Cereals & Grains,100,79.5,1.6,3.9,1.8,54,1
+193,Cornmeal Polenta,Cereals & Grains,100,12,0.2,1,0.4,68,0
+194,Cornstarch,Cereals & Grains,100,91.3,0,0.9,0.1,66,1
+195,Cottage Cheese (Low-Fat),Dairy,100,2.7,2.7,0,1,10,1
+196,Couscous (Cooked),Cereals & Grains,100,23.2,0.1,1.4,0.2,65,0
+197,Cowpeas,Legumes & Pulses,100,20.3,3.22,3.6,0.7,32,1
+198,Crab,Fish & Seafood,100,0,0,0,1.5,0,1
+199,Cracked Wheat Porridge (Dalia),Cereals & Grains,100,17,0.3,3,0.4,46,1
+200,Cranberries,Fruits,100,12.2,4,4.6,0.1,45,1
+201,Cream Cheese,Dairy,100,4.1,3.2,0,34,0,1
+202,Cream Crackers,Bread & Bakery Products,100,68,2,2.9,11,65,0
+203,Croissant,Bread & Bakery Products,100,45.8,11.1,2.6,21,67,0
+204,Cucumber,Vegetables,100,3.6,1.7,0.8,0.16,15,1
+205,Cucumber Tomato Salad,Mixed Dishes,100,4,3,1,0.3,15,1
+206,Cumin Seeds,Herbs & Spices,100,44,2.5,10.5,22.5,15,1
+207,Cupcake (Frosted),Sweets & Desserts,100,57,42,1,15,73,0
+208,Currants (Dried),Dried Fruits,100,79.5,67.3,6.8,0.3,65,0
+209,Curry Leaves,Herbs & Spices,100,18.8,0,6.4,1,15,1
+210,Custard Apple,Fruits,100,25.2,20,2.4,0.6,54,1
+211,Dal Tadka,Legumes & Pulses,100,13,1.5,3.5,4,35,1
+212,Dandelion Greens,Vegetables,100,9.2,0.7,3.5,0.7,15,1
+213,Dark Chocolate (70%),Sweets & Desserts,100,46,24,11,43,23,1
+214,Date Syrup,Sweetener,100,75,70,1,0.1,50,0
+215,Dates (Dried),Dried Fruits,100,69,60,6.5,0.2,42,1
+216,Dhokla,Snacks,100,30,5,3,5,35,1
+217,Diet Cola,Beverage,100,0,0,0,0,0,1
+218,Digestive Biscuit,Bread & Bakery Products,100,66,17,3.5,20,59,1
+219,Dill Pickle (Gherkin),Vegetables,100,2.3,1.1,1,0.2,15,1
+220,Dragon Fruit,Fruits,100,11,8,2.9,0.14,48,1
+221,Dried Apple Rings,Dried Fruits,100,65.9,57.2,8.7,0.3,29,0
+222,Dried Apricots,Dried Fruits,100,62.6,53.4,7.3,0.5,32,0
+223,Dried Coconut (Unsweetened),Nuts & Seeds,100,23.7,7.4,16.3,64.5,45,1
+224,Dried Cranberries (Sweetened),Dried Fruits,100,82.4,72.6,5.3,1.4,64,0
+225,Dried Dates (Medjool),Dried Fruits,100,75,66.5,6.71,0.21,55,0
+226,Dried Fig,Fruits,100,27.6,23.4,4.2,0.4,55,1
+227,Dried Figs,Dried Fruits,100,63.9,47.9,9.8,0.9,61,0
+228,Dried Fish (Shutki),Fish & Seafood,100,0,0,0,4,0,1
+229,Dried Mango,Dried Fruits,100,78.6,66.3,2.4,1.2,60,0
+230,Drumstick Leaves (Sajna Shak),Vegetables,100,8.3,0,2,1.4,15,1
+231,"Duck (Roasted, No Skin)",Meat,100,0,0,0,11.2,0,1
+232,Duck Egg,Eggs & Egg Products,100,1.4,1.4,0,13.8,0,1
+233,Durian,Fruits,100,27.1,20,3.8,5.3,49,1
+234,Edamame,Legumes & Pulses,100,8.9,2.18,5.2,5.2,18,1
+235,Egg Bhurji,Mixed Dishes,100,3,2,0.8,11,15,1
+236,Egg Dalna,Mixed Dishes,100,7,2.5,2,9,35,1
+237,Egg Fried Rice,Mixed Dishes,100,28,1.5,1,7,72,0
+238,Egg Roll (Street Style),Mixed Dishes,100,28,2,2,12,62,0
+239,Egg Sandwich,Mixed Dishes,100,24,3,2,9,55,1
+240,Egg White,Eggs & Egg Products,100,0.73,0.61,0,0.18,0,1
+241,Eggplant,Vegetables,100,5.9,2.9,2.4,0.12,15,1
+242,Endive,Vegetables,100,3.4,0.3,3.1,0.2,15,1
+243,Energy Drink,Beverage,100,11,11,0,0,70,0
+244,Falafel,Legumes & Pulses,100,31.8,0.5,0,17.8,32,1
+245,Falafel Wrap,Mixed Dishes,100,30,3,5,10,50,1
+246,Fennel Bulb,Vegetables,100,7.3,3.9,3.1,0.2,15,1
+247,Fennel Seeds,Herbs & Spices,100,52.4,0,39.8,15,15,1
+248,Fenugreek Leaves (Methi),Herbs & Spices,100,6,0,1.1,0.4,15,1
+249,Fenugreek Seeds,Herbs & Spices,100,58.4,0,24.6,6.4,15,1
+250,Feta Cheese,Dairy,100,4.1,4.1,0,21.5,0,1
+251,Fig,Fruits,100,19.2,16.3,2.9,0.3,55,1
+252,"Finger Millet (Ragi, Cooked)",Cereals & Grains,100,20,0.5,3,0.5,55,1
+253,Fish And Chips,Mixed Dishes,100,25,1,2.5,15,65,0
+254,Fish Curry (Rui),Mixed Dishes,100,3.5,1.5,0.8,8,15,1
+255,Fish Stew,Mixed Dishes,100,6,2.5,1.5,5,30,1
+256,Flattened Rice (Chira),Cereals & Grains,100,77,0.5,1.5,1,66,0
+257,Flax Seeds,Nuts & Seeds,100,28.87,1.33,27.33,42.13,35,1
+258,Flour Tortilla,Bread & Bakery Products,100,49,3,2.5,7,30,1
+259,Freekeh,Cereals & Grains,100,22,0.5,4,0.7,43,1
+260,French Fries,Snacks,100,41,0.3,3.8,15,75,0
+261,French Toast,Mixed Dishes,100,25,8,1,10,63,0
+262,Fresh Basil,Herbs & Spices,100,2.7,0.3,1.6,0.6,15,1
+263,Fresh Coconut,Nuts & Seeds,100,15.2,6.2,9,33.5,45,1
+264,Fresh Fig,Fruits,100,19.2,16.3,2.9,0.3,55,1
+265,Fresh Orange Juice,Beverage,100,10.4,8.4,0.2,0.2,50,0
+266,Fresh Tuna (Grilled),Fish & Seafood,100,0,0,0,6.3,0,1
+267,Fried Chicken,Protein,100,9,0,0.6,14,0,0
+268,Fried Chicken Wings,Protein,100,8,0,0.4,18,0,0
+269,Fried Egg,Eggs & Egg Products,100,0.39,0.39,0,11,0,1
+270,Fried Hilsa (Ilish Bhaja),Fish & Seafood,100,0.5,0,0,25,0,0
+271,Frozen Yogurt,Sweets & Desserts,100,22,20,0,3,45,0
+272,Fruit Cocktail,Fruits,100,8.5,7.5,1,0.1,43,1
+273,Fruit Jam,Sweetener,100,60,48,0.7,0,51,0
+274,Fruit Salad,Fruits,100,13.1,9.8,1,0,48,1
+275,Fruit Smoothie (Unsweetened),Beverage,100,12,9.5,1.5,0.5,40,0
+276,Fruit Yogurt (Sweetened),Dairy,100,20,18,0.3,2,41,0
+277,Fuchka (Pani Puri),Snacks,100,30,3,2.5,12,65,0
+278,Gajar Halwa,Sweets & Desserts,100,32,25,2,12,65,0
+279,Garden Green Salad,Mixed Dishes,100,3.5,2,1.8,0.3,15,1
+280,Garlic,Herbs & Spices,100,33,1,2.2,0.4,30,1
+281,Ghee,Oils & Fats,100,0,0,0,99.6,0,1
+282,Ginger,Herbs & Spices,100,17.76,1.7,2,0.76,15,1
+283,Gingerbread,Bread & Bakery Products,100,49.2,23.79,0,16.4,65,0
+284,Glazed Doughnut,Sweets & Desserts,100,51,22,1.5,25,76,0
+285,Goat Meat (Roasted),Meat,100,0,0,0,3,0,1
+286,Goji Berries,Fruits,100,77.1,45.6,13,0.4,35,1
+287,Gooseberry,Fruits,100,10.2,8.1,4.3,0.6,25,1
+288,Granola,Cereals & Grains,100,64,20,6,20,55,1
+289,Granola Bar,Snacks,100,64,28,5,15,61,0
+290,Grape Juice,Fruits,100,14.8,14.2,0.2,0.1,50,1
+291,Grapefruit,Fruits,100,8.4,7.3,1.1,0.1,25,1
+292,Grapefruit Juice,Fruits,100,9.2,9.1,0.1,0.1,35,1
+293,Grapes,Fruits,100,17.2,16.3,0.9,0.4,44,1
+294,Greek Salad,Mixed Dishes,100,4,3,1.5,8,15,1
+295,"Greek Yogurt (Full-Fat, Plain)",Dairy,100,4,3.6,0,5,12,1
+296,Greek Yogurt With Honey,Dairy,100,14,13,0,3,35,0
+297,Green Banana,Vegetables,100,25.8,1,2,0.2,45,1
+298,Green Beans,Vegetables,100,7,2.3,2.7,0.1,15,1
+299,Green Cauliflower,Vegetables,100,6.1,3,3.2,0.3,15,1
+300,Green Chili,Herbs & Spices,100,9.5,5.1,1.5,2,15,1
+301,Green Gram Sprouts,Legumes & Pulses,100,5.9,4.1,1.8,0.18,25,1
+302,Green Lentils,Legumes & Pulses,100,20.1,1.8,7.9,0.4,30,1
+303,Green Mango,Fruits,100,15,1.1,1.6,0.2,51,1
+304,Green Olives,Vegetables,100,3.8,0,3.3,15.3,15,1
+305,Green Papaya,Vegetables,100,10.8,4,2.5,0.3,35,1
+306,Green Papaya Salad,Vegetables,100,10,5,1.8,0.3,55,1
+307,Green Peas,Legumes & Pulses,100,14.46,5.7,5.7,0.4,35,1
+308,Green Tea (Unsweetened),Beverage,100,0,0,0,0,0,1
+309,Grilled Chicken Breast,Protein,100,0,0,0,3.6,0,1
+310,Grilled Fish,Fish & Seafood,100,0,0,0,1.18,0,1
+311,Grilled Prawns,Fish & Seafood,100,0.5,0,0,2,0,1
+312,Grilled Salmon With Lemon,Fish & Seafood,100,0.5,0.2,0,12,0,1
+313,Grilled Vegetables,Mixed Dishes,100,8,4,3,5,35,1
+314,Ground Cherry,Fruits,100,11.2,9.26,0,0.7,25,1
+315,Guava,Fruits,100,14.3,8.9,5.4,1,24,1
+316,Guava Nectar,Fruits,100,13.3,10.2,1.2,0.1,43,1
+317,Guava Sauce,Fruits,100,9.5,5.9,3.6,0.1,25,1
+318,Gulab Jamun,Sweets & Desserts,100,50,40,0.5,15,78,0
+319,Ham (Sliced),Meat,100,1.5,0.5,0,5.5,0,1
+320,Hazelnuts,Nuts & Seeds,100,16.67,4.33,9.67,60.67,15,1
+321,Heavy Cream,Dairy,100,2.8,2.8,0,36.13,0,1
+322,Hemp Seeds,Nuts & Seeds,100,8.67,1.47,4,48.8,15,1
+323,Hilsa Fish,Fish & Seafood,100,0,0,0,19,0,1
+324,Honey,Sweetener,100,82.38,82.1,0.19,0,58,0
+325,Honeydew Melon,Fruits,100,9.1,8.1,0.8,0.1,62,1
+326,Hot And Sour Soup,Mixed Dishes,100,7,2,1,2.5,40,1
+327,Hummus,Legumes & Pulses,100,20.1,0.3,4,8.6,6,1
+328,Hyacinth Beans,Legumes & Pulses,100,20.7,0.92,0,0.6,31,1
+329,Iceberg Lettuce,Vegetables,100,3,2,1.2,0.1,15,1
+330,Idli,Bread & Bakery Products,100,25,1,1.5,0.5,69,0
+331,Indian Gooseberry (Amla),Fruits,100,13.7,4,4.3,0.6,15,1
+332,Instant Noodles,Cereals & Grains,100,26,1,1.2,7,52,1
+333,Ivy Gourd (Kundru),Vegetables,100,3.1,1,1.6,0.1,15,1
+334,Jackfruit,Fruits,100,23.3,19.1,1.5,0.6,75,1
+335,Jaggery (Gur),Sweetener,100,97,85,0,0.1,84,0
+336,Jalapeno Pepper,Vegetables,100,6.5,4.1,2.8,0.4,15,1
+337,Jalebi,Sweets & Desserts,100,65,55,0.5,15,94,0
+338,Jamun (Black Plum),Fruits,100,14,10,0.6,0.2,25,1
+339,Jasmine Rice,Cereals & Grains,100,28.6,0.1,0.4,0.2,89,0
+340,Java-Plum,Fruits,100,15.6,13.55,0,0.2,25,1
+341,Jerusalem Artichoke,Vegetables,100,17.4,9.6,1.6,0,50,1
+342,Jhal Muri,Snacks,100,70,2,3,8,75,0
+343,Jujube,Fruits,100,20.2,15,0,0.2,20,1
+344,Jute Leaves (Pat Shak),Vegetables,100,5,0.5,2,0.5,15,1
+345,Kachori,Snacks,100,35,2,3,22,66,0
+346,Kale,Vegetables,100,8.75,2.26,3.6,0.93,0,1
+347,Katla Fish,Fish & Seafood,100,0,0,0,2.5,0,1
+348,Kefir (Plain),Dairy,100,4.5,4.5,0,1,36,1
+349,Ketchup,Vegetables,100,27.4,21.3,0.3,0.1,44,1
+350,Khichuri (Rice And Lentil),Mixed Dishes,100,27,1.5,3,5,55,1
+351,Kidney Beans,Legumes & Pulses,100,22.8,0.3,6.4,0.5,22,1
+352,Kimchi,Vegetables,100,4,2.4,1.6,0.5,15,1
+353,Kiwi,Fruits,100,14.7,9,3,0.5,50,1
+354,Kohlrabi,Vegetables,100,6.2,2.6,3.6,0.1,15,1
+355,Koi Fish,Fish & Seafood,100,0,0,0,4.5,0,1
+356,Kulfi,Sweets & Desserts,100,25,22,0,10,55,0
+357,Kumquats,Fruits,100,15.9,9.4,6.5,0.9,35,1
+358,Labra (Mixed Veg Curry),Mixed Dishes,100,9,3,3.5,5,40,1
+359,Ladyfingers,Bread & Bakery Products,100,59.7,24.22,1,9.1,67,0
+360,Lamb Chop (Grilled),Meat,100,0,0,0,17,0,1
+361,Lamb Kebab,Mixed Dishes,100,3,1,0.5,15,15,1
+362,Lau Ghonto (Bottle Gourd Curry),Mixed Dishes,100,5,2,1.5,5,20,1
+363,Lean Beef Mince,Meat,100,0,0,0,10,0,1
+364,Leek,Vegetables,100,14.2,3.9,1.8,0.3,32,1
+365,Lemon,Fruits,100,9.3,2.5,2.8,0.3,20,1
+366,Lemon Juice,Fruits,100,6.9,2.5,0.3,0.2,25,1
+367,Lemon Pickle,Condiments & Sauces,100,10,3,3,15,25,1
+368,Lemon Water (Unsweetened),Beverage,100,0.5,0.2,0,0,0,1
+369,Lemon Zest,Fruits,100,16,4.2,10.6,0.3,25,1
+370,Lentil Salad,Mixed Dishes,100,15,2,5,3,32,1
+371,Lentil Soup,Legumes & Pulses,100,10.4,1.9,3.45,1.25,44,1
+372,Lentil Soup With Vegetables,Mixed Dishes,100,14,3,4.5,2.5,35,1
+373,Lentils,Legumes & Pulses,100,20.1,1.8,7.9,0.4,32,1
+374,Lettuce,Vegetables,100,2.9,0.78,1.3,0.14,15,1
+375,Lima Beans,Legumes & Pulses,100,20.9,2.9,7,0.4,32,1
+376,Lime,Fruits,100,10.5,1.7,2.8,0.2,20,1
+377,Lime Juice,Fruits,100,8.4,1.7,0.4,0.1,25,1
+378,Loganberry,Fruits,100,13,7.7,5.3,0.3,43,1
+379,Longan,Fruits,100,15.1,6,1.1,0.1,56,1
+380,Loquats,Fruits,100,12.1,9.28,1.7,0.2,40,1
+381,Lotus Root,Vegetables,100,17.2,0.5,4.9,0.1,33,1
+382,Low-Fat Milk (Unsweetened),Dairy,100,5,5,0,0.97,30,1
+383,Luchi,Bread & Bakery Products,100,47,1,2,21,72,0
+384,Lupin Beans,Legumes & Pulses,100,9.9,1.27,2.8,2.9,35,1
+385,Lychee,Fruits,100,16.5,15.2,1.3,0.4,48,1
+386,Macadamia Nuts,Nuts & Seeds,100,13.8,4.6,8.6,75.8,10,1
+387,Mackerel (Grilled),Fish & Seafood,100,0,0,0,17.8,0,1
+388,Makhana (Fox Nuts),Nuts & Seeds,100,76.9,0,14.5,0.1,35,1
+389,Malabar Spinach (Pui Shak),Vegetables,100,3.4,0.2,2.1,0.3,15,1
+390,Mango,Fruits,100,15,13.7,1.6,0.4,51,1
+391,Mango Ice Cream,Sweets & Desserts,100,24,22,0.5,9,50,0
+392,Mango Juice (Packaged),Beverage,100,13,12.5,0.2,0.1,55,0
+393,Mango Nectar,Fruits,100,13.1,12.5,0.3,0.1,50,1
+394,Mango Pickle (Achar),Condiments & Sauces,100,15,8,3,18,35,1
+395,Mangosteen,Fruits,100,18,15,1.8,0.6,50,1
+396,Maple Syrup,Sweetener,100,67,60,0,0.1,54,0
+397,Maraschino Cherry,Fruits,100,42,38.8,3.2,0.2,51,0
+398,Margarine,Oils & Fats,100,0.6,0,0,80,0,1
+399,Margherita Pizza (1 Slice),Mixed Dishes,100,27,3,2,9,60,0
+400,Masala Omelette,Mixed Dishes,100,3,2,0.8,11,15,1
+401,Mashed Potato,Vegetables,100,16,1.3,1.4,4.2,83,0
+402,Masoor Dal,Legumes & Pulses,100,17,1,4.5,0.5,30,1
+403,Mayonnaise,Condiments & Sauces,100,0.6,0.6,0,75,0,1
+404,Milk Chocolate,Sweets & Desserts,100,59,52,3.4,30,43,0
+405,Milk Tea With Sugar,Beverage,100,7,6.5,0,1.5,55,0
+406,Millet,Cereals & Grains,100,23.7,0.1,1.3,1,71,1
+407,Millet Flour,Cereals & Grains,100,75.1,1.7,3.5,4.3,55,1
+408,Minestrone Soup,Mixed Dishes,100,9,3,2.5,2,48,1
+409,Mint Leaves,Herbs & Spices,100,8.4,0,8,0.6,42,1
+410,Mishti Doi (Sweet Yogurt),Dairy,100,22,20,0,3,45,0
+411,Miso,Legumes & Pulses,100,25.4,6.2,5.4,6,33,1
+412,Miso Soup,Mixed Dishes,100,3,1,0.7,1.5,25,1
+413,Mixed Vegetable Bhaji,Mixed Dishes,100,8,3,3,5,35,1
+414,Molasses,Sweetener,100,74.7,74.7,0,0.1,55,0
+415,Molasses Cookies,Bread & Bakery Products,100,73.8,17.6,1,12.8,67,0
+416,Moong Dal,Legumes & Pulses,100,16,1.5,4.5,0.4,31,1
+417,Moong Dal Cheela,Mixed Dishes,100,18,1.5,4,4,35,1
+418,Moth Beans,Legumes & Pulses,100,21,0.32,0,0.6,30,1
+419,Mozzarella Cheese,Dairy,100,2.2,1,0,22.4,0,1
+420,Muesli (No Added Sugar),Cereals & Grains,100,66,11,7.5,6,57,1
+421,Mulberries,Fruits,100,9.8,8.1,1.7,0.4,25,1
+422,Multigrain Bread,Bread & Bakery Products,100,47.1,6.9,8.1,3.8,65,1
+423,Mung Bean Sprouts,Legumes & Pulses,100,5.9,4.1,1.8,0.18,25,1
+424,Mung Beans,Legumes & Pulses,100,19.2,2,7.6,0.4,25,1
+425,Mushroom,Vegetables,100,3.3,2,1,0.3,10,1
+426,Mushroom Curry,Mixed Dishes,100,5,2,2,7,20,1
+427,Mushroom Soup (Cream),Mixed Dishes,100,8,2,0.8,6,40,1
+428,Mussels,Fish & Seafood,100,7.4,0,0,4.5,0,1
+429,Mustard Greens,Vegetables,100,4.7,1.3,3.2,0.5,15,1
+430,Mustard Oil,Oils & Fats,100,0,0,0,100,0,1
+431,Mustard Paste,Condiments & Sauces,100,5,2,3,4,35,1
+432,Mustard Seeds,Herbs & Spices,100,28.2,6.8,12.2,36.2,15,1
+433,Mutton Curry,Mixed Dishes,100,4,1.5,1,16,15,1
+434,Naan,Bread & Bakery Products,100,50,3,2,7,71,0
+435,Napa Cabbage,Vegetables,100,3.2,1.4,1.2,0.2,15,1
+436,Natto,Legumes & Pulses,100,14.4,4.9,5.4,11,33,1
+437,Navy Beans,Legumes & Pulses,100,26,0.4,10.5,0.6,31,1
+438,Nectarine,Fruits,100,10.6,7.9,1.7,0.3,43,1
+439,Nimki,Snacks,100,58,1,2.5,25,68,0
+440,Noodles,Cereals & Grains,100,25.2,0.4,1.2,2.1,52,1
+441,Oat Bran,Cereals & Grains,100,11.4,0.27,2.6,0.9,46,1
+442,Oat Flour,Cereals & Grains,100,65.7,0.8,6.5,9.1,55,1
+443,Oat Milk,Plant-Based Milk & Beverages,100,6.6,3.4,0.8,1.5,69,0
+444,Oatmeal Cookie,Sweets & Desserts,100,68,35,3,18,55,0
+445,Oatmeal Cookies,Bread & Bakery Products,100,69,33.1,3.3,15.8,65,0
+446,Oatmeal With Banana,Mixed Dishes,100,28,10,4,4,60,0
+447,Oats,Cereals & Grains,100,67.5,1,10,7.5,55,1
+448,Oats Upma,Mixed Dishes,100,18,1.5,3,4,50,1
+449,Okara,Legumes & Pulses,100,12.2,2.83,0,1.7,35,1
+450,Okra (Lady'S Finger),Vegetables,100,7.5,1.5,3.2,0.19,15,1
+451,Olive Oil,Oils & Fats,100,0,0,0,100,0,1
+452,Olives,Fruits,100,6,0,1.6,10.9,20,1
+453,Omelette (Plain),Eggs & Egg Products,100,0.6,0.5,0,10,0,1
+454,Onion,Vegetables,100,8.6,4.2,1.6,0.1,10,1
+455,Orange,Fruits,100,11.8,9.4,2.4,0.1,43,1
+456,Orange Juice,Fruits,100,10.4,8.4,0.2,0.2,43,1
+457,Orange Marmalade,Sweetener,100,65,55,0.5,0,48,0
+458,Orange Zest,Fruits,100,25,8.2,10.6,0.2,40,1
+459,Overnight Oats (Unsweetened),Mixed Dishes,100,22,4,4,5,50,1
+460,Oysters,Fish & Seafood,100,6.7,0,0,4.2,0,1
+461,Pabda Fish,Fish & Seafood,100,0,0,0,3.5,0,1
+462,Palak Paneer,Mixed Dishes,100,6,2,3,12,20,1
+463,Palm Fruit (Tal),Fruits,100,10.9,8,1,0.1,60,0
+464,Palm Oil,Oils & Fats,100,0,0,0,100,0,1
+465,Pancake (Plain),Bread & Bakery Products,100,28,6,1,9,67,0
+466,Paneer,Dairy,100,1.2,1.2,0,20.8,27,1
+467,Pangasius,Fish & Seafood,100,0,0,0,3,0,1
+468,Papad,Legumes & Pulses,100,59.9,0,18.6,3.3,30,1
+469,Papaya,Fruits,100,11,7.8,1.7,0.3,38,1
+470,Paprika,Herbs & Spices,100,54,10.33,35,13,15,1
+471,Parboiled Rice,Cereals & Grains,100,26,0.1,0.5,0.3,52,1
+472,Parmesan Cheese,Dairy,100,3.2,0.9,0,25,0,1
+473,Parsley,Herbs & Spices,100,6.3,0.9,3.3,0.8,15,1
+474,Parsnip,Vegetables,100,17,4.8,3.1,0.3,52,1
+475,Passion Fruit,Fruits,100,22.4,11.2,10.4,0.7,30,1
+476,Pasta,Cereals & Grains,100,30.9,0.6,1.8,0.9,49,1
+477,Pasta With Tomato Sauce,Mixed Dishes,100,27,4,2,3,52,1
+478,Patishapta Pitha,Sweets & Desserts,100,35,15,1.5,8,65,0
+479,Payesh (Bangladeshi Rice Pudding),Sweets & Desserts,100,24,16,0.3,4.5,65,0
+480,Pea Protein Shake (Unsweetened),Protein,100,5,1,2,3,15,1
+481,Pea Soup,Legumes & Pulses,100,9.9,3.2,1.9,1.1,66,1
+482,Peach,Fruits,100,9.5,8.4,1.5,0.25,28,1
+483,Peanut Butter,Legumes & Pulses,100,21.6,8.4,8,49.9,35,1
+484,Peanut Butter Cookies,Bread & Bakery Products,100,58.9,28.25,0,23.8,67,0
+485,Peanut Butter Sandwich,Mixed Dishes,100,35,6,4,18,55,1
+486,Peanut Flour,Legumes & Pulses,100,34.7,8.2,15.8,0.6,32,1
+487,Peanuts,Legumes & Pulses,100,21.3,2.5,8.8,22,32,1
+488,Pear,Fruits,100,15.2,9.8,3.1,0.1,24,1
+489,Pecans,Nuts & Seeds,100,13.9,4,9.6,72,10,1
+490,Persimmon,Fruits,100,18.6,12.5,3.6,0.2,50,1
+491,Pigeon Peas,Legumes & Pulses,100,23.3,3.2,6.7,0.4,32,1
+492,Pine Nuts,Nuts & Seeds,100,13.1,3.6,3.7,68.4,15,1
+493,Pineapple,Fruits,100,13.1,9.8,1.4,0.1,59,1
+494,Pinto Beans,Legumes & Pulses,100,21.8,0.3,9,0.7,39,1
+495,Pistachios,Nuts & Seeds,100,25.67,7.33,10.67,45.33,15,1
+496,Piyaju,Snacks,100,28,2,5,20,45,1
+497,Plain Bagel,Bread & Bakery Products,100,56,6.1,2.3,1.7,72,0
+498,Plain Dal Soup (Masoor),Mixed Dishes,100,12,1,3.5,2.5,30,1
+499,Plain Dosa,Bread & Bakery Products,100,30,1,1.5,4,77,0
+500,Plain Greek Yogurt (Unsweetened),Dairy,100,3.6,3.2,0,0.4,11,1
+501,Plain Homemade Yogurt (Unsweetened),Dairy,100,4.7,4.7,0,3.3,35,1
+502,Plain Paratha,Bread & Bakery Products,100,42,1,3,13,65,0
+503,Plain Unsweetened Yogurt,Dairy,100,4.7,4.7,0,3.3,35,1
+504,Plain Yogurt,Dairy,100,4.7,4.7,0,3.3,35,1
+505,Plantain,Fruits,100,31.9,15,2.3,0.4,45,1
+506,Plum,Fruits,100,11.4,9.9,1.4,0.28,24,1
+507,Poha,Cereals & Grains,100,25,2,1.5,4,64,0
+508,Pointed Gourd (Potol),Vegetables,100,3.5,0.4,2.6,0.1,50,1
+509,Polao (Plain),Mixed Dishes,100,30,0.5,0.5,6,70,0
+510,Pomegranate Juice,Beverage,100,14.5,13,0.1,0.3,50,0
+511,Pomelo,Fruits,100,9.6,6,1,0,30,1
+512,Pomergranate,Fruits,100,18.6,13.6,4,1.2,35,1
+513,Popcorn (Air-Popped),Snacks,100,77.8,0.9,14.5,4.2,65,0
+514,Poppy Seeds,Nuts & Seeds,100,28.1,3,19.5,41.6,15,1
+515,Pork Chop (Grilled),Meat,100,0,0,0,9.7,0,1
+516,Porridge Oats (Cooked In Water),Cereals & Grains,100,12,0.4,1.7,1.4,55,1
+517,Potato,Vegetable/Starch,100,20.1,0.9,1.8,0.1,78,0
+518,Potato Chips,Snacks,100,50,0.67,4,33.33,56,0
+519,Pound Cake,Bread & Bakery Products,100,52.5,30.78,1,17.9,67,0
+520,Prawn Malai Curry,Mixed Dishes,100,5,2.5,0.5,14,25,1
+521,Pretzels,Snacks,100,80,2.6,2.9,2,83,0
+522,Protein Bar,Snacks,100,35,10,6,10,35,1
+523,Prunes (Dried Plums),Dried Fruits,100,63.9,38.1,7.1,0.4,29,1
+524,Puffed Rice (Muri),Cereals & Grains,100,87,0.1,1.4,0.5,82,0
+525,Puffed Rice Cake,Bread & Bakery Products,100,81.5,0.9,4,2.8,82,1
+526,Puli Pitha,Sweets & Desserts,100,40,20,2,6,68,0
+527,Pumpernickel Bread,Bread & Bakery Products,100,47.5,3.5,6.5,1.2,46,1
+528,Pumpkin,Vegetables,100,6.5,2.8,0.5,0.2,74,1
+529,Pumpkin Seeds,Nuts & Seeds,100,15,1.4,6,49,25,1
+530,Pumpkin Soup,Mixed Dishes,100,8,4,1,2.5,60,0
+531,Puri (Fried),Bread & Bakery Products,100,45,1,3,22,70,0
+532,Quail Eggs,Eggs & Egg Products,100,0.4,0.4,0,11.1,0,1
+533,Quinoa,Cereals & Grains,100,21.3,0.9,2.8,1.9,53,1
+534,Quinoa Salad,Mixed Dishes,100,17,2,3,5,45,1
+535,Radicchio,Vegetables,100,4.5,0.6,0.9,0.1,15,1
+536,Radish,Vegetables,100,3.4,1.8,1.6,0.1,15,1
+537,Ragi Roti,Bread & Bakery Products,100,40,1,4.5,1.5,60,0
+538,Raisins,Dried Fruits,100,79,60,3.5,0.25,64,1
+539,Rajma (Kidney Bean Curry),Legumes & Pulses,100,16,2,5.5,5,36,1
+540,Rambutan,Fruits,100,20.9,16,0.9,0.2,59,1
+541,Rasgulla,Sweets & Desserts,100,40,35,0,2,68,0
+542,Rasmalai,Sweets & Desserts,100,30,25,0,8,65,0
+543,Raspberries,Fruits,100,11.9,4.4,6.5,0.7,25,1
+544,Red Amaranth (Lal Shak),Vegetables,100,4,0.1,2.1,0.3,15,1
+545,Red Bell Pepper,Vegetables,100,6,4.2,2.1,0.3,15,1
+546,Red Cabbage,Vegetables,100,7.4,3.8,2.1,0.2,10,1
+547,Red Chili Powder,Herbs & Spices,100,56.67,10.33,27.33,14.33,15,1
+548,Red Grapefruit,Fruits,100,10.7,6.9,1.6,0.1,25,1
+549,Red Lentils,Legumes & Pulses,100,20.1,1.8,7.9,0.4,26,1
+550,Red Onion,Vegetables,100,9.9,4.2,2.2,0.1,10,1
+551,Red Rice,Cereals & Grains,100,20.8,0,1.8,0.3,55,1
+552,Red Wine,Beverage,100,2.6,0.6,0,0,0,0
+553,Refried Beans,Legumes & Pulses,100,13.5,0.6,4.7,0.5,32,1
+554,Rice Crackers,Snacks,100,82,0.5,1.5,3,87,0
+555,Rice Flour Roti (Rutee),Bread & Bakery Products,100,40,0.5,1,1,70,0
+556,Rice Kheer,Sweets & Desserts,100,22,15,0.3,4,65,0
+557,Rice Milk,Plant-Based Milk & Beverages,100,9.2,5.3,0.3,1,86,0
+558,Rice Noodles,Cereals & Grains,100,24,0.03,1,0.2,55,1
+559,Ricotta Cheese,Dairy,100,3,0.3,0,13,27,1
+560,Ridge Gourd (Jhinga),Vegetables,100,3,1.2,2,0.1,15,1
+561,Roasted Chestnuts,Nuts & Seeds,100,44.5,10.6,5.1,2.2,60,0
+562,Roasted Chicken (With Skin),Protein,100,0,0,0,13.6,0,1
+563,Roasted Chickpeas (Snack),Snacks,100,55,10,13,6,28,1
+564,Roasted Peanuts (Salted),Nuts & Seeds,100,21.5,4,8,49.7,14,1
+565,Rohu Fish,Fish & Seafood,100,0,0,0,1.3,0,1
+566,Rolled Oats (Dry),Cereals & Grains,100,67.75,1,10,6.5,55,1
+567,Romaine Lettuce,Vegetables,100,3.3,1.2,2.1,0.3,15,1
+568,Rooh Afza Sherbet,Beverage,100,12,11.5,0,0,65,0
+569,Rosemary,Herbs & Spices,100,20.6,0,14.2,6,15,1
+570,Ruhi Fish Fry,Fish & Seafood,100,4,0.5,0.3,12,25,0
+571,Rutabaga,Vegetables,100,8.7,5,2.3,0.2,72,1
+572,Rye Bread,Bread & Bakery Products,100,48.3,3.9,5.8,3.3,58,1
+573,Rye Crispbread,Bread & Bakery Products,100,75,2,14,1.47,63,0
+574,Salad Dressing (Ranch),Condiments & Sauces,100,6,3,0.2,44,15,1
+575,Salmon,Fish & Seafood,100,0,0,0,5.3,0,1
+576,Salmon Sushi Roll,Mixed Dishes,100,30,3,1,5,55,1
+577,Salted Lassi,Beverage,100,4,4,0,2,30,1
+578,Sambar,Legumes & Pulses,100,9,2.5,2.5,2.5,40,1
+579,Samosa (Potato),Snacks,100,30,2,3,18,65,0
+580,Sandesh,Sweets & Desserts,100,55,50,0,12,60,0
+581,Sapodilla (Sofeda),Fruits,100,19.9,14.7,5.3,1.1,55,1
+582,Sardines,Fish & Seafood,100,0,0,0,11.5,0,1
+583,Satkara (Citrus Macroptera),Fruits,100,11,5,2,0.2,25,1
+584,Sauerkraut,Vegetables,100,4.3,1.8,2.9,0.1,15,1
+585,Savoy Cabbage,Vegetables,100,6.1,2.3,3.1,0.1,15,1
+586,Scrambled Eggs,Eggs & Egg Products,100,1.6,1.4,0,10,0,1
+587,Sea Bass,Fish & Seafood,100,0,0,0,2.6,0,1
+588,Seekh Kebab (Beef),Meat,100,4,1,1,15,15,1
+589,Seitan,Protein,100,14,0.5,0.5,2,15,1
+590,"Semolina (Cooked, Suji)",Cereals & Grains,100,15,0.2,0.9,0.3,66,0
+591,Sesame Oil,Oils & Fats,100,0,0,0,100,0,1
+592,Sesame Seeds,Nuts & Seeds,100,23,0.3,12,50,35,1
+593,Shallots,Vegetables,100,16.8,7.9,3.2,0.1,10,1
+594,Shing Fish,Fish & Seafood,100,0,0,0,3.5,0,1
+595,Shirataki Noodles,Cereals & Grains,100,3,0,3,0,20,1
+596,Shortbread Cookies,Bread & Bakery Products,100,76,21.7,1.3,14,65,0
+597,Shrimp,Fish & Seafood,100,0.2,0,0,1.7,0,1
+598,Shukto,Mixed Dishes,100,7,2.5,3,5,35,1
+599,Shutki Bhorta,Mixed Dishes,100,3,1,1,10,15,1
+600,Skim Milk,Dairy,100,5,5,0,0.1,32,1
+601,Small Fish,Fish & Seafood,100,0,0,0,3.2,0,1
+602,Snake Gourd (Chichinga),Vegetables,100,3,1,1.1,0.2,15,1
+603,Soba Noodles,Cereals & Grains,100,21.4,0.5,2.4,0.1,46,1
+604,Sorbet,Sweets & Desserts,100,25,22,0.5,0,60,0
+605,Sorghum,Cereals & Grains,100,25,1,2.5,1,62,0
+606,Sour Cream,Dairy,100,3.5,3.4,0,20,0,1
+607,Sourdough Bread,Bread & Bakery Products,100,51.9,2.1,2,3,53,1
+608,Soy Flour,Legumes & Pulses,100,33.9,16.4,17.5,1.2,30,1
+609,Soy Milk (Unsweetened),Plant-Based Milk & Beverages,100,1.6,0.3,0.5,1.8,15,1
+610,Soy Sauce,Condiments & Sauces,100,5.6,0.4,0.8,0.07,20,1
+611,Soybean Oil,Oils & Fats,100,0,0,0,100,0,1
+612,Soybeans,Legumes & Pulses,100,8.4,3,6,9,33,1
+613,Spaghetti,Cereals & Grains,100,30.9,0.6,1.8,0.9,42,1
+614,Spaghetti Bolognese,Mixed Dishes,100,20,4,2,6,52,1
+615,Spaghetti Squash,Vegetables,100,6.5,2.8,1.5,0.6,20,1
+616,Spelt,Cereals & Grains,100,34,1,4.5,1,54,1
+617,Spinach,Vegetables,100,3.6,0.4,2.2,0.26,15,1
+618,Spinach Dal (Palak Dal),Mixed Dishes,100,13,1.5,4,3,30,1
+619,Split Peas,Legumes & Pulses,100,21.1,2.9,8.3,0.4,25,1
+620,Sponge Cake,Bread & Bakery Products,100,61,36.7,0.5,2.7,67,0
+621,Sports Drink,Beverage,100,6,5.5,0,0,78,0
+622,Spring Onion,Vegetables,100,7.3,2.3,2.6,0.19,15,1
+623,Spring Roll (Fried),Snacks,100,30,2,2,15,60,0
+624,Star Apple,Fruits,100,18,14,3,1,45,1
+625,Star Fruit,Fruits,100,6.7,4,2.8,0.3,36,1
+626,Steamed Fish With Ginger,Fish & Seafood,100,1,0.3,0.2,4,0,1
+627,Steel-Cut Oats,Cereals & Grains,100,12,0.4,1.7,1.4,42,1
+628,Sticky Rice,Cereals & Grains,100,21.1,0.1,1,0.2,87,0
+629,Strawberry,Fruits,100,7.7,4.9,2,0.3,25,1
+630,Stuffed Bell Pepper,Mixed Dishes,100,12,4,2.5,6,45,1
+631,Sugar Cookies,Bread & Bakery Products,100,67.3,27.3,1.3,19.6,67,0
+632,Sugar Snap Peas,Vegetables,100,7.6,4,2.6,0.2,35,1
+633,Sugarcane Juice,Beverage,100,15.9,15.4,0,0.1,43,0
+634,Sugary Soft Drink,Beverage,100,10.6,10.6,0,0,63,0
+635,Suji Halwa,Sweets & Desserts,100,45,25,1,18,70,0
+636,Sun-Dried Tomatoes,Vegetables,100,55.8,37.6,12.27,3,35,1
+637,Sunflower Oil,Oils & Fats,100,0,0,0,100,0,1
+638,Sunflower Seeds,Nuts & Seeds,100,18.67,2.67,6.67,49.33,20,1
+639,Surimi,Fish & Seafood,100,6.9,0,0,0.9,0,1
+640,Sweet Corn (Canned),Vegetables,100,18,3,1.9,1.2,55,1
+641,Sweet Corn Soup,Mixed Dishes,100,12,3,1.2,1.5,55,1
+642,Sweet Lassi,Beverage,100,14,13,0,2.5,40,0
+643,Sweet Lime (Mosambi),Fruits,100,9.3,7,2,0.3,40,1
+644,Sweet Potato,Vegetables,100,17.7,5.7,2.5,0.1,44,1
+645,Sweetened Condensed Milk,Dairy,100,54.4,54.4,0,8.7,61,0
+646,Sweetened Fruit Juice,Beverage,100,11.6,10.4,0.2,0.08,60,0
+647,Sweetened Yogurt,Dairy,100,18,15,0,2.5,45,0
+648,Swiss Chard,Vegetables,100,3.7,1.1,1.6,0.2,15,1
+649,Swordfish,Fish & Seafood,100,0,0,0,7.9,0,1
+650,Table Sugar,Sweetener,100,100,100,0,0,65,0
+651,Tahini,Nuts & Seeds,100,21.2,0.47,9.33,53.8,40,1
+652,Tamarind Chutney,Condiments & Sauces,100,45,35,3,0.5,55,1
+653,Tamarind Pulp,Fruits,100,62.5,57.4,5.1,0.6,54,1
+654,Tangerine,Fruits,100,13.3,10.6,1.8,0.3,42,1
+655,Taro Leaves (Kochu Shak),Vegetables,100,6.7,1,3.7,0.7,15,1
+656,Taro Root,Vegetables,100,26.5,0.5,4.1,0.1,53,1
+657,Taro Stolon (Kochur Loti),Vegetables,100,9,1,3,0.2,40,1
+658,Tea With Milk (Unsweetened),Beverage,100,2.5,2.5,0,1,30,1
+659,Teff,Cereals & Grains,100,19.9,1,2.8,0.7,57,1
+660,Tempeh,Legumes & Pulses,100,7.6,0,0,10.8,15,1
+661,Tengra Fish,Fish & Seafood,100,0,0,0,3,0,1
+662,Textured Vegetable Protein,Protein,100,10,2,5,1,15,1
+663,Tilapia,Fish & Seafood,100,0,0,0,2.7,0,1
+664,Tilapia Fish,Fish & Seafood,100,0,0,0,2.7,0,1
+665,Tofu,Legumes & Pulses,100,6.9,1.6,0,8.1,15,1
+666,Tomato,Vegetables,100,3.9,2.6,1.2,0.2,15,1
+667,Tomato Juice,Beverage,100,4.2,3.6,0.8,0.1,33,1
+668,Tomato Ketchup,Condiments & Sauces,100,26,22,0.27,0.07,55,1
+669,Tomato Salsa,Condiments & Sauces,100,7,4,1.5,0.2,15,1
+670,Tomato Soup,Mixed Dishes,100,7,5,1.2,1.5,45,1
+671,Toor Dal,Legumes & Pulses,100,17,1.5,4.5,0.5,29,1
+672,Tortilla Chips,Snacks,100,63,1,5,23,63,0
+673,Trail Mix,Nuts & Seeds,100,45,30,5,29,50,1
+674,Tuna (Canned In Water),Fish & Seafood,100,0,0,0,1,0,1
+675,Tuna Salad,Mixed Dishes,100,2,1,0.8,8,15,1
+676,Turkey Breast (Roasted),Meat,100,0,0,0,1,0,1
+677,Turmeric Powder,Herbs & Spices,100,67,3.33,22.67,10,15,1
+678,Turnip,Vegetables,100,6.4,3.8,1.8,0.1,30,1
+679,Turnip Greens,Vegetables,100,7.1,0.8,3.5,0.3,15,1
+680,Upma,Cereals & Grains,100,20,1,2,5,68,0
+681,Urad Dal,Legumes & Pulses,100,18,1,5,0.6,43,1
+682,Vanilla Ice Cream,Sweets & Desserts,100,23.61,21.2,0.7,11,61,0
+683,Vanilla Wafers,Bread & Bakery Products,100,72.6,35.1,1.6,16.4,67,0
+684,Vegetable Chorchori,Mixed Dishes,100,8,3,3,6,35,1
+685,Vegetable Oats Khichdi,Mixed Dishes,100,20,2,3.5,4,50,1
+686,Vegetable Pakora,Snacks,100,25,2.5,3.5,20,60,0
+687,Vegetable Pulao,Mixed Dishes,100,28,2,2,5,62,0
+688,Vegetable Sandwich,Mixed Dishes,100,24,3,3,5,55,1
+689,Vegetable Soup,Mixed Dishes,100,7,3,2,1,40,1
+690,Vegetable Stir-Fry,Mixed Dishes,100,9,4,3,6,35,0
+691,Vinegar,Condiments & Sauces,100,0.07,0.07,0,0,0,1
+692,Waffle (Plain),Bread & Bakery Products,100,33,5,1.49,13,76,0
+693,Walnuts,Nuts & Seeds,100,13,2.33,6.33,61.67,0,1
+694,Water Apple (Jamrul),Fruits,100,5.7,5,1,0.3,25,1
+695,Water Spinach (Kolmi Shak),Vegetables,100,3.1,0.5,2.1,0.2,0,1
+696,Watercress,Vegetables,100,1.3,0.2,0.5,0.1,15,1
+697,Watermelon,Fruits,100,7.6,6.2,0.4,0.2,7.2,1
+698,Whey Protein Shake,Protein,100,6,4,0.5,2,20,1
+699,White Bread,Cereals & Grains,100,50,5,2.67,3.33,75,0
+700,White Cake,Bread & Bakery Products,100,79.6,46.67,0,8.4,67,0
+701,White Pasta,Cereals & Grains,100,31,0.6,1.8,0.9,49,1
+702,White Pita Bread,Bread & Bakery Products,100,55.7,1.3,2.2,1.2,68,0
+703,White Rice,Cereals & Grains,100,28.2,0.1,0.4,0.3,73,0
+704,Whole Grain Toast,Bread & Bakery Products,100,41.3,6,6,3.4,51,1
+705,Whole Milk,Dairy,100,4.8,4.8,0,3.3,31,1
+706,Whole Wheat Bread,Bread & Bakery Products,100,42.67,4.33,6,3.67,51,1
+707,Whole Wheat Chapati,Bread & Bakery Products,100,46.1,2.9,9.7,9.2,62,1
+708,Whole Wheat Noodles,Cereals & Grains,100,30.1,0.8,3.9,1.7,45,1
+709,Whole Wheat Pasta,Cereals & Grains,100,30.1,0.8,4.6,1.7,50,1
+710,Whole Wheat Pita,Bread & Bakery Products,100,55,1,7.4,1.7,57,1
+711,Whole Wheat Roti,Cereals & Grains,100,50,2,8,4,52,1
+712,Wild Rice,Cereals & Grains,100,21.3,0.7,1.8,0.3,57,1
+713,Wood Apple (Bel),Fruits,100,31.8,10,5,0.3,35,1
+714,Yam,Vegetables,100,27.9,0.5,4.1,0.1,54,1
+715,Yardlong Beans,Vegetables,100,8.4,1.2,3,0.4,15,1
+716,Yellow Bell Pepper,Vegetables,100,6.3,5,0.9,0.2,15,1
+717,Yellow Cake,Bread & Bakery Products,100,55.4,39.2,1.5,17.8,67,0
+718,Zucchini,Vegetables,100,3.11,2.5,1,0.32,15,1

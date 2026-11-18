@@ -1,0 +1,93 @@
+{
+  "trained_at_utc": "2026-11-17T15:03:14Z",
+  "random_state": 42,
+  "dataset_provenance": {
+    "pima": "Kaggle PIMA Indians Diabetes dataset (user-provided CSV)",
+    "general": "Kaggle Diabetes Prediction dataset (user-provided CSV)",
+    "food": "Primarily author-created and curated food suitability dataset (user-provided workbook)"
+  },
+  "model_1_pima": {
+    "accuracy": 0.87013,
+    "precision": 0.793103,
+    "recall": 0.851852,
+    "f1": 0.821429,
+    "roc_auc": 0.934815,
+    "confusion_matrix": [
+      [
+        88,
+        12
+      ],
+      [
+        8,
+        46
+      ]
+    ],
+    "test_size": 154,
+    "threshold": 0.48
+  },
+  "model_2_general": {
+    "full": {
+      "accuracy": 0.969319,
+      "precision": 0.912687,
+      "recall": 0.721108,
+      "f1": 0.805665,
+      "roc_auc": 0.975619,
+      "confusion_matrix": [
+        [
+          17417,
+          117
+        ],
+        [
+          473,
+          1223
+        ]
+      ],
+      "test_size": 19230,
+      "threshold": 0.5
+    },
+    "nonlab": {
+      "accuracy": 0.784867,
+      "precision": 0.240264,
+      "recall": 0.665684,
+      "f1": 0.353088,
+      "roc_auc": 0.818645,
+      "confusion_matrix": [
+        [
+          13964,
+          3570
+        ],
+        [
+          567,
+          1129
+        ]
+      ],
+      "test_size": 19230,
+      "threshold": 0.5
+    }
+  },
+  "model_3_food": {
+    "accuracy": 0.916667,
+    "precision": 0.952381,
+    "recall": 0.934579,
+    "f1": 0.943396,
+    "roc_auc": 0.949987,
+    "confusion_matrix": [
+      [
+        32,
+        5
+      ],
+      [
+        7,
+        100
+      ]
+    ],
+    "test_size": 144,
+    "threshold": 0.5
+  },
+  "research_caveats": [
+    "Prediction is not a medical diagnosis.",
+    "Food suitability labels are author-curated, not an individualized dietary prescription.",
+    "The food workbook audit includes estimated, unverified nutrition values.",
+    "These are held-out results after retraining with pinned implementations; published thesis values may vary by package version."
+  ]
+}

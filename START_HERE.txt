@@ -1,0 +1,22 @@
+DiaWise: Local Web Application for Three ML Models
+===================================================
+
+Quick start on Windows:
+
+1. Install 64-bit Python 3.11, 3.12, or 3.13.
+   Select "Add Python to PATH" during installation.
+2. Extract the complete ZIP archive.
+3. Double-click run_windows.bat in the extracted folder.
+4. The first dependency installation requires an internet connection.
+5. The browser opens http://127.0.0.1:8000 after all models are ready.
+6. Press Ctrl+C in the terminal window to stop the server.
+
+Important:
+- The three trained .pkl files are already included in the models folder.
+- You do not need to retrain the models before running the application.
+- Model 2 stores separate Full and Non-Lab fitted models in one .pkl file.
+- The first website tab provides predictions; the second explains the models and diagrams.
+- Model 1 and Model 2 use Kaggle datasets; Model 3 uses an author-created and curated dataset.
+- This is a research demonstration, not a medical diagnosis or dietary prescription.
+
+For complete documentation, see README.md.
