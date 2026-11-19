@@ -23,7 +23,7 @@ Open Command Prompt inside the project folder:
 py -3.12 -m venv .venv
 .venv\Scripts\activate
 python -m pip install -r requirements.txt
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-access-log
 ```
 
 If Python 3.12 is not installed, substitute `py -3.11` or `py -3.13`. You can choose another free port by replacing `8000` with `8080` in the last command and browser URL.
@@ -45,7 +45,15 @@ Choose one of three models:
 - **Model 2: General Diabetes** — Choose **Full (8 inputs)** with HbA1c and blood glucose or **Non-Lab (6 inputs)** without them. Both trained LightGBM estimators use the experiment's **SMOTENC**-balanced training set. The original **Kaggle Diabetes Prediction dataset** has 100,000 rows; 96,146 remain after duplicate removal. Categorical encodings are identical to the supplied notebook. Non-lab results have **low positive precision** and must not be used to replace lab testing.
 - **Model 3: Food Suitability** — Either search an existing food by name, or enter an unfamiliar food's serving size, total carbohydrate, sugar, fiber, fat and glycemic index. For unknown foods, mass-based values are normalized to **100 g**; the glycemic index **is not scaled**. The model is a **sigmoid-calibrated XGBoost classifier** trained from your **primarily author-created and curated** 718-item workbook. Known foods are returned by direct catalog lookup (not by ML inference). A probability **≤25%** returns “not recommended,” **≥75%** returns “recommended,” and otherwise the website says **uncertain**. These are notebook-defined thresholds, not clinically established recommendations.
 
-All prediction inputs are handled **only in computer memory**. No user accounts or remote transmission are implemented. The web server binds to **127.0.0.1** by default, so it is only accessible from your PC.
+All prediction inputs are handled **only in computer memory**. No user accounts, input cache, remote transmission, or launcher access logging are implemented. The web server binds to **127.0.0.1** by default, so it is only accessible from your PC.
+
+### Understanding each result
+
+Every model-generated result includes an **Exact SHAP** explanation over the original values entered in the form. It shows the reference baseline, final model probability, and how each feature moved the result in signed percentage points. PIMA explanations include its eight original inputs while still accounting for the pipeline's internal feature engineering; custom-food explanations include the final calibrated XGBoost probability. General Full and Non-Lab explanations contain eight and six factors respectively.
+
+The result view initially shows the three strongest factors to keep the interface clear. Select **Show all factors** to reveal every remaining contribution. Repeated helper boxes and duplicate warning cards are intentionally omitted; the single explanation caveat contains the required interpretation warning.
+
+SHAP describes how the model behaved relative to 32 deterministic reference records from the included local dataset. A contribution **toward** or **away from** the positive class is not proof that a feature medically caused an outcome, and it is not an individualized diagnosis or treatment recommendation. Known-food matches do not run a model, so they display direct catalog-label provenance instead of SHAP contributions.
 
 ### Tab B — About the Models
 
@@ -102,7 +110,8 @@ DiaWise/
 │   ├── launcher.py                  # Server supervision, readiness wait and browser launch
 │   └── ml/
 │       ├── transforms.py            # PIMA feature engineering (pickle import path)
-│       └── constants.py             # Feature lists and categorical maps
+│       ├── constants.py             # Feature lists and categorical maps
+│       └── explanations.py          # Exact input-level SHAP service
 ├── templates/
 │   └── index.html                   # Two-tab UI
 ├── static/
@@ -156,9 +165,11 @@ Model 3 custom example (`200 g` serving; GI is not normalized):
 
 This becomes per 100g carbohydrate 30g, sugar 6g, fiber 4g, fat 3g, and GI 55.
 
+Model-inference responses contain an `explanation` object with `base_probability`, `output_probability`, and all `features` ordered by absolute contribution. Each feature contains its original display value, signed probability contribution, and direction. Direct known-food responses instead return `kind: "catalog_provenance"`.
+
 ## 7. Research restrictions and limitations
 
-1. **Model 1:** The original PIMA data reflect a limited study population. No diagnosis can be established from the web form. The notebook's saved SHAP outputs may not fully match its current engineered-feature names; therefore, the application does not claim to provide personally tailored SHAP explanations.
+1. **Model 1:** The original PIMA data reflect a limited study population. No diagnosis can be established from the web form. The application computes fresh input-level SHAP values against the final pipeline probability; these explain model behavior, not a person's medical causes or clinical risk.
 2. **Model 2:** Class-imbalance handling was chosen by F1 score; a model optimized for recall alone may produce more false positives. Removing laboratory features significantly reduces precision. The binary target is recorded diabetes status rather than prospectively verified diabetes incidence.
 3. **Model 3:** The labels were created/curated for this research, not validated against clinical meal outcomes. The workbook includes 104 estimated nutrient values flagged as unverified in its audit. The model does not consider patient medication, allergies, history or meal plans.
 4. The user interface is a **local demonstration**, not a deployed hospital or production system. If the application is exposed to other computers or the public internet, additional privacy, security and regulatory work would be required.
@@ -170,7 +181,9 @@ This becomes per 100g carbohydrate 30g, sugar 6g, fiber 4g, fat 3g, and GI 55.
 - **`ModuleNotFoundError: app.ml.transforms`**: start Python from the project root; do not move a `.pkl` to a different directory by itself.
 - **`Address already in use`**: close the other program using port 8000 or use `--port 8080`.
 - **Model loading fails**: use Python 3.11–3.13 and the versions in `requirements.txt`; if necessary, retrain on your PC.
+- **SHAP initialization or explanation fails**: activate `.venv`, reinstall `requirements.txt`, confirm `python -c "import shap; print(shap.__version__)"` prints `0.51.0`, and restart DiaWise. Readiness intentionally remains unavailable rather than showing an unexplained model result.
 - **Browser shows connection refused**: make sure the terminal is still running, wait for `Uvicorn running on...`, then reload `http://127.0.0.1:8000`.
+- **An old or mixed-language interface is still open**: restart DiaWise and refresh the page. Frontend files use a release version and `no-store` headers so the current English interface replaces stale browser assets.
 - **Check the Windows setup without starting the server**: run `run_windows.bat -Check` in Command Prompt.
 - **Need to use a different PC on the LAN?** This project intentionally binds to localhost only; it does not expose patient inputs across the factory or internet.
 

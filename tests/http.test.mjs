@@ -120,3 +120,24 @@ test('classic browser scripts share one realm and restore the form after failure
   assert.equal(elements.get('form-errors').hidden, false);
   assert.match(elements.get('form-errors').textContent, /timed out/i);
 });
+
+
+test('resultVisual maps model outputs to ring marks and polarity labels', async () => {
+  const mainSource = await readFile(new URL('../static/js/main.js', import.meta.url), 'utf8');
+  const context = vm.createContext({
+    window: {DiaWiseHttp: {fetchJson: async () => ({})}},
+    document: {querySelector: () => null, querySelectorAll: () => [], addEventListener: () => {}},
+    setTimeout, clearTimeout, console,
+  });
+  vm.runInContext(mainSource, context, {filename: 'main.js'});
+
+  const negative = vm.runInContext("resultVisual({model:'pima', classification:0, probability:.333})", context);
+  const positive = vm.runInContext("resultVisual({model:'general', classification:1, probability:.706})", context);
+  const uncertain = vm.runInContext("resultVisual({model:'food', classification:null, probability:.5})", context);
+  const recommended = vm.runInContext("resultVisual({model:'food', source:'dataset_lookup', classification:1, probability:null})", context);
+
+  assert.deepEqual(JSON.parse(JSON.stringify(negative)), {mark:'✓', polarity:'Negative', tone:'success', progress:'33.3%'});
+  assert.deepEqual(JSON.parse(JSON.stringify(positive)), {mark:'!', polarity:'Positive', tone:'danger', progress:'70.6%'});
+  assert.deepEqual(JSON.parse(JSON.stringify(uncertain)), {mark:'?', polarity:'Uncertain', tone:'uncertain', progress:'50.0%'});
+  assert.deepEqual(JSON.parse(JSON.stringify(recommended)), {mark:'✓', polarity:'Recommended', tone:'success', progress:'100%'});
+});

@@ -75,7 +75,7 @@ def run_server(open_browser: bool = True, host: str = '127.0.0.1', port: int = 8
         return 1
     process = subprocess.Popen([
         sys.executable, '-m', 'uvicorn', 'app.main:app',
-        '--host', host, '--port', str(port),
+        '--host', host, '--port', str(port), '--no-access-log',
     ])
     try:
         wait_until_ready(health_url, process, timeout_seconds=45)

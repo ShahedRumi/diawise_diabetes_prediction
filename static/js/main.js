@@ -52,7 +52,8 @@ function element(type,className,text){const e=document.createElement(type);if(cl
 function createField(field){
   const wrap=element('div','input-field'+(field.span?' field-span-full':''));
   const id='f-'+field.key;
-  const label=element('label',null,field.label);label.htmlFor=id;wrap.append(label);
+  const label=element('label','field-label');label.htmlFor=id;label.append(element('span',null,field.label));
+  if(field.unit)label.append(element('small',null,field.unit));wrap.append(label);
   const frame=field.key==='food_name'&&state.foodMode==='lookup'?element('div','autocomplete-wrap'):wrap;
   let control;
   if(field.type==='select'){
@@ -65,13 +66,13 @@ function createField(field){
   control.name=field.key;control.id=id;control.required=!field.optional;control.autocomplete='off';
   frame.append(control);
   if(frame!==wrap){const suggestions=element('div','autocomplete-results');suggestions.id='food-suggestions';suggestions.hidden=true;frame.append(suggestions);wrap.append(frame);bindAutocomplete(control,suggestions);}
-  wrap.append(element('small',null,field.unit||''));return wrap;
+  return wrap;
 }
 function render(){
   const isPima=state.model==='pima',isGen=state.model==='general';
   $('#form-kicker').textContent=isPima?'MODEL 01 · PIMA':isGen?'MODEL 02 · GENERAL':'MODEL 03 · FOOD';
   $('#form-title').textContent=isPima?'PIMA Diabetes Classification':isGen?'General Diabetes Analysis':'Food Suitability Research';
-  $('#form-subtitle').textContent=isPima?'Provide 8 clinical inputs; preprocessing and feature engineering are applied automatically.':isGen?'Choose Full (8) or Non-Lab (6) features to explore the research workflow.':'Search the food catalog or enter nutrition values for an ML prediction.';
+  $('#form-subtitle').textContent=isPima?'Enter eight values for the PIMA model.':isGen?'Choose the full or non-lab model.':'Search the catalog or enter nutrition values.';
   const toggle=$('#mode-toggle');toggle.replaceChildren();toggle.hidden=isPima;
   if(!isPima){
     const modes=isGen?[['full','Full · 8 features'],['nonlab','Non-lab · 6 features']]:[['lookup','Known food lookup'],['custom','Unknown food · ML']];
@@ -79,7 +80,6 @@ function render(){
     for(const [val,text] of modes){const b=element('button','mode-button'+(active===val?' active':''),text);b.type='button';b.setAttribute('aria-pressed',active===val?'true':'false');b.addEventListener('click',()=>{if(isGen)state.generalMode=val;else state.foodMode=val;render();});toggle.append(b);}
   }
   const fields=$('#form-fields');fields.replaceChildren();currentFields().forEach(f=>fields.append(createField(f)));
-  $('#form-help').textContent=isPima?'The source PIMA dataset represents a specific population; this prediction is not a diagnosis.':isGen?(state.generalMode==='full'?'Eight features, including laboratory measurements, will be used. HbA1c and blood glucose are required.':'Only six non-laboratory features will be used. This research model has low positive precision and must not be treated as screening evidence.'):(state.foodMode==='lookup'?'Known foods return the author-curated dataset label directly; this is not an ML prediction.':'Carbohydrate, sugar, fiber, and fat are normalized to 100 g. Glycemic index remains unchanged. Results between 25% and 75% are reported as uncertain.');
   $('#submit-label').textContent=state.model==='food'&&state.foodMode==='lookup'?'Find food':'Show prediction';
   $('#result-placeholder').hidden=false;$('#result-panel').hidden=true;$('#form-errors').hidden=true;
 }
@@ -93,23 +93,66 @@ function extractPayload(){
 }
 function failure(message){const box=$('#form-errors');box.textContent=message;box.hidden=false;}
 function percent(v){return `${(v*100).toFixed(1)}%`;}
+function renderExplanation(explanation){
+  const panel=$('#explanation-panel'),bridge=$('#explanation-bridge'),legend=$('#explanation-legend'),features=$('#explanation-features');
+  bridge.replaceChildren();legend.replaceChildren();features.replaceChildren();panel.querySelector('.explanation-toggle')?.remove();
+  if(!explanation){panel.hidden=true;return;}
+  panel.hidden=false;$('#explanation-target').textContent=explanation.target||'';$('#explanation-caveat').textContent=explanation.caveat||'';
+  if(explanation.kind==='catalog_provenance'){
+    $('#explanation-heading').textContent='Why this result was returned';
+    bridge.append(element('p','catalog-provenance',explanation.summary));legend.hidden=true;features.hidden=true;return;
+  }
+  $('#explanation-heading').textContent='Why the model predicted this';legend.hidden=false;features.hidden=false;
+  const baseline=element('div','explanation-stat');baseline.append(element('span',null,'Baseline'),element('strong',null,percent(explanation.base_probability)));
+  const arrow=element('span','explanation-arrow','→');arrow.setAttribute('aria-hidden','true');
+  const output=element('div','explanation-stat');output.append(element('span',null,'Model output'),element('strong',null,percent(explanation.output_probability)));
+  bridge.append(baseline,arrow,output);
+  legend.append(element('span','legend-up','Toward positive class'),element('span','legend-down','Away from positive class'));
+  const maximum=Math.max(...explanation.features.map(item=>Math.abs(item.contribution)),.000001);
+  for(const [index,item] of explanation.features.entries()){
+    const points=item.contribution*100,positive=points>0,negative=points<0;
+    const direction=positive?'toward the positive class':negative?'away from the positive class':'with no material change';
+    const signed=points===0?'0.00':`${positive?'+':'−'}${Math.abs(points).toFixed(2)}`;
+    const row=element('div','explanation-feature');row.setAttribute('role','listitem');if(index>=3)row.hidden=true;
+    const heading=element('div','feature-heading');
+    const name=element('div','feature-name');name.append(element('strong',null,item.label),element('span',null,item.display_value));
+    const effect=element('div',`feature-effect ${positive?'effect-up':negative?'effect-down':'effect-neutral'}`);
+    effect.append(element('strong',null,`${signed} percentage points`),element('span',null,direction));heading.append(name,effect);
+    const track=element('div','effect-track');track.setAttribute('role','img');track.setAttribute('aria-label',`${item.label} moved the result ${signed} percentage points ${direction}.`);
+    const fill=element('div',`effect-fill ${positive?'effect-up':negative?'effect-down':'effect-neutral'}`);fill.style.width=`${Math.abs(item.contribution)/maximum*50}%`;if(positive)fill.style.left='50%';else fill.style.right='50%';track.append(fill);
+    row.append(heading,track);features.append(row);
+  }
+  if(explanation.features.length>3){
+    const toggle=element('button','explanation-toggle','Show all factors');toggle.type='button';toggle.setAttribute('aria-expanded','false');
+    toggle.addEventListener('click',()=>{const expanded=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!expanded));features.querySelectorAll('.explanation-feature').forEach((row,index)=>{if(index>=3)row.hidden=expanded;});toggle.textContent=expanded?'Show all factors':'Show fewer factors';});
+    features.after(toggle);
+  }
+}
+function resultVisual(result){
+  const uncertain=result.classification===null;
+  const isFood=result.model==='food';
+  const success=!uncertain&&(isFood?result.classification===1:result.classification===0);
+  const probability=Number.isFinite(result.probability)?Math.max(0,Math.min(1,result.probability)):1;
+  return {
+    mark:uncertain?'?':success?'✓':'!',
+    polarity:uncertain?'Uncertain':isFood?(result.classification===1?'Recommended':'Not recommended'):(result.classification===1?'Positive':'Negative'),
+    tone:uncertain?'uncertain':success?'success':'danger',
+    progress:Number.isFinite(result.probability)?`${(probability*100).toFixed(1)}%`:'100%',
+  };
+}
 function showResult(result){
   $('#form-errors').hidden=true;$('#result-placeholder').hidden=true;$('#result-panel').hidden=false;
   const isFood=result.model==='food';const fromCatalog=result.source==='dataset_lookup';const uncertain=result.classification===null;
-  const good=isFood?result.classification===1:result.classification===0;
-  const icon=$('#result-icon');icon.className='result-icon '+(uncertain?'uncertain':good?'negative':'positive');icon.textContent=uncertain?'?':good?'✓':'!';
+  const visual=resultVisual(result);const icon=$('#result-icon');const ring=$('#result-ring');
+  icon.textContent=visual.mark;ring.className=`result-ring ${visual.tone}`;ring.style.setProperty('--result-progress',visual.progress);ring.setAttribute('aria-label',fromCatalog?`Dataset result: ${visual.polarity}`:`${visual.progress} probability; ${visual.polarity}`);
   let title,description;
   if(fromCatalog){title=result.classification===1?'Recommended in dataset':'Not recommended in dataset';description=`${result.food_name} · ${result.category} · Dataset lookup (no model inference)`;}
   else if(isFood){title=uncertain?'Result is uncertain':result.classification===1?'Leans recommended':'Leans not recommended';description=`${result.food_name} · XGBoost output based on author-curated labels`;
   }else{title=result.classification===1?'Diabetes-positive classification':'Diabetes-negative classification';description=result.model==='pima'?'PIMA Random Forest model · threshold 0.48':`LightGBM + SMOTENC · ${result.mode==='full'?'8 features (full)':'6 features (non-lab)'}`;}
   $('#result-title').textContent=title;$('#result-detail').textContent=description;
   const prob=$('#probability-wrap');prob.hidden=fromCatalog;
-  if(!fromCatalog){$('#result-probability').textContent=percent(result.probability);$('#probability-fill').style.width=percent(result.probability);$('#probability-label').textContent=isFood?'Predicted probability of Score = 1':'Predicted probability of diabetes-positive class';$('#probability-note').textContent=isFood?'Model score is not individualized nutrition advice.':'Model probability is not a diagnosis or a verified personal medical risk.';}
-  const extras=$('#result-extras');extras.replaceChildren();
-  const notes=[...(result.notes||[])];
-  if(result.per_100g){notes.unshift('Nutrients per 100g: '+Object.entries(result.per_100g).map(([k,v])=>`${k}: ${v}`).join(' · '));}
-  for(const note of notes){const row=element('div','result-extra');row.append(element('b',null,'• '));row.append(document.createTextNode(note));extras.append(row);}
-  $('#result-disclaimer').textContent=result.disclaimer||'Research prototype only.';
+  if(!fromCatalog){$('#result-probability').textContent=visual.progress;$('#probability-fill').style.width=visual.progress;$('#probability-label').textContent=isFood?'Recommended-class probability':'Diabetes-positive probability';const polarity=$('#result-polarity');polarity.className=`result-polarity ${visual.tone}`;polarity.textContent=visual.polarity;}
+  renderExplanation(result.explanation);
   if(window.innerWidth<831){$('#result-panel').scrollIntoView({behavior:'smooth',block:'nearest'});}
 }
 function setBusy(busy){$('#submit-button').disabled=busy;$('#submit-label').textContent=busy?'Processing...':state.model==='food'&&state.foodMode==='lookup'?'Find food':'Show prediction';}

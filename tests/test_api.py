@@ -14,8 +14,12 @@ def client():
 
 
 def test_status_and_static_page(client):
-    assert client.get('/').status_code == 200
-    assert client.get('/static/js/main.js').status_code == 200
+    home = client.get('/')
+    script = client.get('/static/js/main.js')
+    assert home.status_code == 200
+    assert script.status_code == 200
+    assert home.headers['cache-control'] == 'no-store'
+    assert script.headers['cache-control'] == 'no-store'
     assert client.get('/api/health').json()['models_loaded'] == 3
 
 
@@ -28,6 +32,10 @@ def test_pima(client):
     assert response.status_code == 200
     assert 0 <= response.json()['probability'] <= 1
     assert response.json()['threshold'] == .48
+    explanation = response.json()['explanation']
+    assert explanation['kind'] == 'shap'
+    assert len(explanation['features']) == 8
+    assert explanation['output_probability'] == pytest.approx(response.json()['probability'], abs=1e-6)
 
 
 def test_general_both_modes(client):
@@ -39,6 +47,7 @@ def test_general_both_modes(client):
     full = client.post('/api/predict/general', json={**payload, 'mode':'full', 'HbA1c_level': 6.3, 'blood_glucose_level': 140})
     assert full.status_code == 200
     assert full.json()['features_used'] == 8
+    assert len(full.json()['explanation']['features']) == 8
     assert client.post('/api/predict/general', json={**payload, 'mode':'full'}).status_code == 422
 
 
@@ -47,6 +56,8 @@ def test_food_known_lookup_and_custom_normalization(client):
     assert known.status_code == 200
     assert known.json()['source'] == 'dataset_lookup'
     assert known.json()['probability'] is None
+    assert known.json()['explanation']['kind'] == 'catalog_provenance'
+    assert 'SHAP' not in known.json()['explanation']['summary']
     new_food = client.post('/api/predict/food', json={
         'food_name':'Homemade Snack', 'serving_size_g':200,
         'carbohydrate_g':60,'sugar_g':12,'fiber_g':8,'fat_g':6,'glycemic_index':55
@@ -56,6 +67,23 @@ def test_food_known_lookup_and_custom_normalization(client):
     assert obj['source']=='xgboost_inference'
     assert obj['per_100g']['Carbohydrate (g)']==30.0
     assert obj['per_100g']['Glycemic Index']==55.0
+    assert obj['explanation']['kind'] == 'shap'
+    assert len(obj['explanation']['features']) == 5
+
+
+def test_explanation_failure_returns_503_without_unexplained_prediction(client, monkeypatch):
+    artifacts = main.get_artifacts()
+    service = artifacts[-1]
+    monkeypatch.setattr(service, 'explain_pima', lambda *_args, **_kwargs: (_ for _ in ()).throw(RuntimeError('bad SHAP')))
+
+    response = client.post('/api/predict/pima', json={
+        'Pregnancies': 2, 'Glucose': 125, 'BloodPressure': 72,
+        'SkinThickness': 25, 'Insulin': 88, 'BMI': 28.4,
+        'DiabetesPedigreeFunction': .42, 'Age': 38,
+    })
+
+    assert response.status_code == 503
+    assert 'explanation' in response.json()['detail'].lower()
 
 
 def test_food_invalid_serving(client):

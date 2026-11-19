@@ -7,9 +7,9 @@
   <meta name="description" content="Research-only diabetes classification and food suitability demonstration, powered by three local machine learning artifacts.">
   <title>DiaWise | Diabetes Research Studio</title>
   <link rel="icon" href="/static/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/static/css/style.css">
-  <script src="/static/js/http.js" defer></script>
-  <script src="/static/js/main.js" defer></script>
+  <link rel="stylesheet" href="/static/css/style.css?v=20261118-ring">
+  <script src="/static/js/http.js?v=20261118-ring" defer></script>
+  <script src="/static/js/main.js?v=20261118-ring" defer></script>
 </head>
 <body>
   <div class="page-halo halo-one" aria-hidden="true"></div><div class="page-halo halo-two" aria-hidden="true"></div>
@@ -31,13 +31,6 @@
           <div class="eyebrow"><span class="eyebrow-line"></span> EXPLAINABLE MACHINE LEARNING <span class="tiny-sparkle">✦</span></div>
           <h1>Health insights,<br><em>made understandable.</em></h1>
           <p>Three research models, one intuitive interface. Explore diabetes classification, laboratory-free analysis, and nutritional food suitability—all processed locally on your computer.</p>
-          <div class="hero-pills"><span>✧ 3 trained ML artifacts</span><span>✓ FastAPI + Uvicorn</span><span>◌ 100% local processing</span></div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
-          <div class="hero-medallion"><div class="medallion-inner"><svg viewBox="0 0 120 120" fill="none"><path d="M16 61h23l13-29 20 58 13-29h19" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-          <div class="floating-card floating-a"><span class="floating-icon">✳</span><span>Model ready<strong>03 / 03</strong></span></div>
-          <div class="floating-card floating-b"><span class="floating-icon blue">◈</span><span>Research first<strong>Explainable AI</strong></span></div>
         </div>
       </section>
 
@@ -47,7 +40,7 @@
       </nav>
 
       <section id="view-predict" class="page-view" role="tabpanel" aria-labelledby="tab-predict">
-        <div class="view-head"><div><span class="section-kicker">INTERACTIVE LAB</span><h2>Choose a model to explore</h2><p>Enter the required information to view a research-based classification. Your inputs are never stored.</p></div><span class="small-tag">Step 01 / Choose model</span></div>
+        <div class="view-head"><div><span class="section-kicker">INTERACTIVE LAB</span><h2>Choose a model</h2><p>Select a model, enter the required values, and review its explanation.</p></div></div>
         <div class="model-switcher" role="tablist" aria-label="Choose model">
           <button class="model-option selected" role="tab" aria-selected="true" data-model="pima"><span class="option-icon icon-blue">⌁</span><span class="option-content"><small>MODEL 01</small><strong>PIMA Diabetes</strong><em>8 clinical inputs</em></span><span class="option-arrow">↗</span></button>
           <button class="model-option" role="tab" aria-selected="false" data-model="general"><span class="option-icon icon-purple">◉</span><span class="option-content"><small>MODEL 02</small><strong>General Diabetes</strong><em>Full & non-lab modes</em></span><span class="option-arrow">↗</span></button>
@@ -55,18 +48,16 @@
         </div>
         <div class="lab-layout">
           <section class="form-panel card-surface" aria-labelledby="form-title">
-            <div class="panel-top"><div><div id="form-kicker" class="section-kicker">MODEL 01 · PIMA</div><h3 id="form-title">PIMA Diabetes Classification</h3><p id="form-subtitle">Enter the eight values below. Units are shown for each field.</p></div><span class="panel-ornament">◎</span></div>
+            <div class="panel-top"><div><div id="form-kicker" class="section-kicker">MODEL 01 · PIMA</div><h3 id="form-title">PIMA Diabetes Classification</h3><p id="form-subtitle">Enter the eight values below.</p></div></div>
             <div id="mode-toggle" class="mode-toggle" hidden></div>
             <form id="prediction-form" autocomplete="off" novalidate><div id="form-fields" class="form-grid"></div>
-              <div id="form-help" class="form-help">For research demonstration only; this is not a medical diagnosis.</div>
               <div id="form-errors" class="form-error" role="alert" aria-live="polite" hidden></div>
               <div class="form-actions"><button type="submit" class="primary-button" id="submit-button"><span class="primary-star">✦</span> <span id="submit-label">Show prediction</span><span class="arrow-icon">↗</span></button><button type="button" class="ghost-button" id="demo-button">Example input</button><button type="button" class="ghost-button ghost-reset" id="reset-button">Reset</button></div>
             </form>
           </section>
           <aside class="result-column">
-            <section id="result-placeholder" class="result-placeholder card-surface"><div class="result-placeholder-art"><span>✧</span></div><span class="section-kicker">MODEL OUTPUT</span><h3>Your insights<br>appear here</h3><p>Complete the form and click “Show prediction” to see the result here.</p><div class="placeholder-lines"><i></i><i></i><i></i></div></section>
-            <section id="result-panel" class="result-panel card-surface" hidden aria-live="polite"><span class="section-kicker">PREDICTION RESULT</span><div id="result-icon" class="result-icon">◉</div><h3 id="result-title"></h3><p id="result-detail"></p><div id="probability-wrap" class="probability-wrap"><div class="probability-heading"><span id="probability-label">Predicted class probability</span><strong id="result-probability">—</strong></div><div class="probability-track"><div id="probability-fill"></div></div><small id="probability-note"></small></div><div id="result-extras" class="result-extras"></div><div class="result-disclaimer" id="result-disclaimer"></div><button type="button" class="another-button" id="result-again">Make another prediction ↗</button></section>
-            <section class="info-card"><div class="info-card-icon">ⓘ</div><div><strong>Academic research prototype</strong><p>This tool is not a substitute for diagnosis, treatment, or personalized dietary planning. Discuss test results or symptoms with a qualified healthcare professional.</p></div></section>
+            <section id="result-placeholder" class="result-placeholder card-surface"><span class="section-kicker">MODEL OUTPUT</span><h3>Your result will appear here</h3><p>Complete the form and select “Show prediction.”</p></section>
+            <section id="result-panel" class="result-panel card-surface" hidden aria-live="polite"><span class="section-kicker result-caption">PREDICTION RESULT</span><div class="result-summary"><div id="result-ring" class="result-ring" role="img" aria-label="Prediction probability"><div class="result-ring-core"><span id="result-icon" class="result-icon">◉</span></div></div><div class="result-copy"><h3 id="result-title"></h3><p id="result-detail"></p></div></div><div id="probability-wrap" class="probability-wrap"><div class="probability-heading"><span id="probability-label">Predicted class probability</span><strong id="result-probability">—</strong></div><div class="probability-track"><div id="probability-fill"></div></div><div id="result-polarity" class="result-polarity">—</div></div><section id="explanation-panel" class="explanation-panel" aria-labelledby="explanation-heading"><div class="explanation-head"><h4 id="explanation-heading">Why the model predicted this</h4><p id="explanation-target"></p></div><div id="explanation-bridge" class="explanation-bridge"></div><div id="explanation-legend" class="explanation-legend"></div><div id="explanation-features" class="explanation-features" role="list"></div><p id="explanation-caveat" class="explanation-caveat"></p></section><button type="button" class="another-button" id="result-again">New prediction</button></section>
           </aside>
         </div>
       </section>

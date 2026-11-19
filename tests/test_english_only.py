@@ -26,3 +26,11 @@ def test_frontend_declares_english_and_quick_start_is_english_named():
     assert '<html lang="en">' in html
     assert (ROOT / 'START_HERE.txt').is_file()
     assert not (ROOT / 'START_HERE_BN.txt').exists()
+
+
+def test_frontend_assets_use_a_release_version_to_replace_stale_language_bundles():
+    html = (ROOT / 'templates' / 'index.html').read_text(encoding='utf-8')
+
+    assert '/static/css/style.css?v=20261118-ring' in html
+    assert '/static/js/http.js?v=20261118-ring' in html
+    assert '/static/js/main.js?v=20261118-ring' in html

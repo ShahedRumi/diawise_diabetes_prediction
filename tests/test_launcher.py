@@ -114,3 +114,20 @@ def test_wait_until_ready_surfaces_terminal_artifact_failure():
     with _unavailable_server() as url:
         with pytest.raises(RuntimeError, match=r'pima_model\.pkl.*train_models\.py'):
             wait_until_ready(url, _Process(), timeout_seconds=1, poll_interval=0.01)
+
+
+def test_spawned_server_disables_access_logging(monkeypatch):
+    from app import launcher
+
+    captured = []
+
+    class FakeProcess:
+        def poll(self):
+            return 1
+
+    monkeypatch.setattr(launcher, '_existing_instance_ready', lambda _url: False)
+    monkeypatch.setattr(launcher, '_port_in_use', lambda _host, _port: False)
+    monkeypatch.setattr(launcher.subprocess, 'Popen', lambda command: captured.extend(command) or FakeProcess())
+
+    assert launcher.run_server(open_browser=False, port=8765) == 1
+    assert '--no-access-log' in captured

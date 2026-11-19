@@ -20,6 +20,7 @@ from app.ml.constants import (
     FOOD_FEATURES, GENERAL_INPUTS, GENDER_MAP, NONLAB_INPUTS,
     PIMA_INPUTS, SMOKING_MAP,
 )
+from app.ml.explanations import ExplanationService
 
 ROOT = Path(__file__).resolve().parent.parent
 MODELS = ROOT / 'models'
@@ -76,7 +77,9 @@ def load_artifacts():
             'nutrients': {col: round(float(row[col]), 3) for col in FOOD_FEATURES},
         }
     metrics = json.loads((MODELS / 'metrics.json').read_text(encoding='utf-8'))
-    return pima, general, food, lookup, metrics
+    explanations = ExplanationService.build(pima, general, food, DATA)
+    explanations.warm_up()
+    return pima, general, food, lookup, metrics, explanations
 
 
 def _initialize_artifacts() -> None:
@@ -120,11 +123,31 @@ app = FastAPI(
     redoc_url=None,
     lifespan=lifespan,
 )
+
+
+@app.middleware('http')
+async def prevent_stale_local_frontend(request, call_next):
+    response = await call_next(request)
+    if request.url.path == '/' or request.url.path.startswith('/static/'):
+        response.headers['Cache-Control'] = 'no-store'
+    return response
+
+
 app.mount('/static', StaticFiles(directory=str(ROOT / 'static')), name='static')
 
 
 def normalize_name(value: str) -> str:
     return re.sub(r'[^a-z0-9]+', ' ', value.casefold()).strip()
+
+
+def _explain_or_503(explain, *args) -> dict:
+    try:
+        return explain(*args)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail='The prediction explanation could not be computed safely. Please retry or restart DiaWise.',
+        ) from exc
 
 
 class PimaRequest(BaseModel):
@@ -182,13 +205,13 @@ def health():
             status_code=503,
             detail='Model artifacts are unavailable. ' + (status['error'] or 'Loading has not completed.'),
         )
-    _, _, _, catalog, _ = get_artifacts()
+    _, _, _, catalog, _, _ = get_artifacts()
     return {'status': 'ok', 'models_loaded': 3, 'food_catalog_size': len(catalog)}
 
 
 @app.get('/api/models')
 def model_information():
-    _, _, _, _, meta = get_artifacts()
+    _, _, _, _, meta, _ = get_artifacts()
     return {
         'data_provenance': meta['dataset_provenance'],
         'metrics': {
@@ -204,7 +227,7 @@ def model_information():
 
 @app.post('/api/predict/pima')
 def predict_pima(payload: PimaRequest):
-    model, _, _, _, _ = get_artifacts()
+    model, _, _, _, _, explanations = get_artifacts()
     df = pd.DataFrame([{col: getattr(payload, col) for col in PIMA_INPUTS}], columns=PIMA_INPUTS)
     p = float(model.predict_proba(df)[0, 1])
     positive = p >= .48
@@ -213,19 +236,31 @@ def predict_pima(payload: PimaRequest):
         flags.append('The source PIMA dataset focuses on adult women aged 21 and above; extrapolation is unreliable.')
     if any(getattr(payload, c) == 0 for c in ('Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI')):
         flags.append('One or more entered zero values were treated as missing and imputed from training data.')
+    display = {
+        'Pregnancies': f'{payload.Pregnancies:g}',
+        'Glucose': f'{payload.Glucose:g} mg/dL',
+        'BloodPressure': f'{payload.BloodPressure:g} mmHg',
+        'SkinThickness': f'{payload.SkinThickness:g} mm',
+        'Insulin': f'{payload.Insulin:g} µU/mL',
+        'BMI': f'{payload.BMI:g} kg/m²',
+        'DiabetesPedigreeFunction': f'{payload.DiabetesPedigreeFunction:g}',
+        'Age': f'{payload.Age:g} years',
+    }
+    explanation = _explain_or_503(explanations.explain_pima, df, display)
     return {
         'model': 'pima', 'classification': int(positive),
         'probability': round(p, 6), 'threshold': .48,
         'label': 'Diabetes-positive classification' if positive else 'Diabetes-negative classification',
         'source': 'trained_random_forest',
         'notes': flags,
+        'explanation': explanation,
         'disclaimer': 'Research-only classification. It does not confirm or rule out diabetes. Consult a qualified clinician for diagnosis.',
     }
 
 
 @app.post('/api/predict/general')
 def predict_general(payload: GeneralRequest):
-    _, model_set, _, _, _ = get_artifacts()
+    _, model_set, _, _, _, explanations = get_artifacts()
     features = GENERAL_INPUTS if payload.mode == 'full' else NONLAB_INPUTS
     row = {
         'gender': GENDER_MAP[payload.gender],
@@ -246,6 +281,20 @@ def predict_general(payload: GeneralRequest):
         flags.append('This 6-feature model has low diabetic precision on held-out research data; positive classifications may often be false alarms.')
     if payload.age > 80:
         flags.append('Age is outside the main source-data range; prediction reliability is unknown.')
+    display = {
+        'gender': payload.gender,
+        'age': f'{payload.age:g} years',
+        'hypertension': 'Yes' if payload.hypertension else 'No',
+        'heart_disease': 'Yes' if payload.heart_disease else 'No',
+        'smoking_history': payload.smoking_history.replace('_', ' ').title(),
+        'bmi': f'{payload.bmi:g} kg/m²',
+        'HbA1c_level': f'{payload.HbA1c_level:g}%' if payload.HbA1c_level is not None else 'Not provided',
+        'blood_glucose_level': (
+            f'{payload.blood_glucose_level:g} mg/dL'
+            if payload.blood_glucose_level is not None else 'Not provided'
+        ),
+    }
+    explanation = _explain_or_503(explanations.explain_general, payload.mode, df, display)
     return {
         'model': 'general', 'mode': payload.mode,
         'features_used': len(features),
@@ -254,13 +303,14 @@ def predict_general(payload: GeneralRequest):
         'label': 'Diabetes-positive classification' if positive else 'Diabetes-negative classification',
         'source': 'trained_smote_lightgbm',
         'notes': flags,
+        'explanation': explanation,
         'disclaimer': 'Research-only classification. Laboratory-free output must not be used as a diagnostic replacement.',
     }
 
 
 @app.get('/api/foods')
 def search_foods(query: str = Query(default='', min_length=0, max_length=80)):
-    _, _, _, catalog, _ = get_artifacts()
+    _, _, _, catalog, _, _ = get_artifacts()
     needle = normalize_name(query)
     if len(needle) < 2:
         return {'matches': []}
@@ -273,7 +323,7 @@ def search_foods(query: str = Query(default='', min_length=0, max_length=80)):
 
 @app.post('/api/predict/food')
 def predict_food(payload: FoodRequest):
-    _, _, model, catalog, _ = get_artifacts()
+    _, _, model, catalog, _, explanations = get_artifacts()
     food_key = normalize_name(payload.food_name)
     known = catalog.get(food_key) if food_key else None
     if known:
@@ -285,6 +335,18 @@ def predict_food(payload: FoodRequest):
             'per_100g': known['nutrients'], 'notes': [
                 'Exact match returned the author-curated dataset label; no ML model inference was performed.',
             ],
+            'explanation': {
+                'kind': 'catalog_provenance',
+                'method': 'Direct dataset lookup',
+                'target': 'Author-curated food suitability label',
+                'summary': (
+                    'This result is the stored label for an exact food-catalog match. '
+                    'No predictive model was used, so there are no model feature contributions.'
+                ),
+                'caveat': (
+                    'The catalog label is a research annotation, not an individualized dietary prescription.'
+                ),
+            },
             'disclaimer': 'Curated research labels are not a clinical dietary prescription. Portions and personal health context matter.',
         }
     needed = ('serving_size_g', 'carbohydrate_g', 'sugar_g', 'fiber_g', 'fat_g', 'glycemic_index')
@@ -303,6 +365,12 @@ def predict_food(payload: FoodRequest):
     with warnings.catch_warnings():
         warnings.filterwarnings('ignore', message='X does not have valid feature names.*')
         score = float(model.predict_proba(pd.DataFrame([normalized], columns=FOOD_FEATURES))[0, 1])
+    frame = pd.DataFrame([normalized], columns=FOOD_FEATURES)
+    display = {
+        key: (f'{value:g}' if key == 'Glycemic Index' else f'{value:g} g per 100 g')
+        for key, value in normalized.items()
+    }
+    explanation = _explain_or_503(explanations.explain_food, frame, display)
     if score >= .75:
         category, label = 1, 'Likely recommended under training labels'
     elif score <= .25:
@@ -319,5 +387,6 @@ def predict_food(payload: FoodRequest):
             'Glycemic index was not normalized because it is not a nutrient mass.',
             'The dataset includes estimated nutrition values not independently verified.',
         ],
+        'explanation': explanation,
         'disclaimer': 'Research-prototype food classification, not an individualized meal plan or clinical dietary recommendation.',
     }
